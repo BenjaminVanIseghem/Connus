@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		440FC7981003C69B17672E8A /* Pods_ConnusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 662142423EB08EAC406B372B /* Pods_ConnusUITests.framework */; };
+		67A54DDD004FF01E7189C3D5 /* Pods_Connus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 782383A976B895F9146C4737 /* Pods_Connus.framework */; };
+		7384A7562279E5E20020CAF6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A7552279E5E20020CAF6 /* Extensions.swift */; };
+		7384A758227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A757227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift */; };
+		7384A759227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A757227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift */; };
+		7384A75A227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A757227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift */; };
+		7384A75C227A310C0020CAF6 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A75B227A310C0020CAF6 /* RadioButton.swift */; };
+		7384A75D227A310C0020CAF6 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A75B227A310C0020CAF6 /* RadioButton.swift */; };
+		7384A75E227A310C0020CAF6 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A75B227A310C0020CAF6 /* RadioButton.swift */; };
 		73F4678C227381010017B7E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F4678B227381010017B7E9 /* AppDelegate.swift */; };
 		73F4678E227381010017B7E9 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F4678D227381010017B7E9 /* FirstViewController.swift */; };
 		73F46790227381010017B7E9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F4678F227381010017B7E9 /* SecondViewController.swift */; };
@@ -15,6 +24,17 @@
 		73F46798227381030017B7E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73F46796227381030017B7E9 /* LaunchScreen.storyboard */; };
 		73F467A3227381030017B7E9 /* ConnusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F467A2227381030017B7E9 /* ConnusTests.swift */; };
 		73F467AE227381030017B7E9 /* ConnusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F467AD227381030017B7E9 /* ConnusUITests.swift */; };
+		73F467C02273838E0017B7E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73F467BF2273838E0017B7E9 /* GoogleService-Info.plist */; };
+		73F467C12273838E0017B7E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73F467BF2273838E0017B7E9 /* GoogleService-Info.plist */; };
+		73F467C22273838E0017B7E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73F467BF2273838E0017B7E9 /* GoogleService-Info.plist */; };
+		73F467C42273890D0017B7E9 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F467C32273890D0017B7E9 /* EntryViewController.swift */; };
+		73F467C72275A6060017B7E9 /* RegisterInfluencerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F467C62275A6060017B7E9 /* RegisterInfluencerViewController.swift */; };
+		73F467C82275A6060017B7E9 /* RegisterInfluencerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F467C62275A6060017B7E9 /* RegisterInfluencerViewController.swift */; };
+		73F467C92275A6060017B7E9 /* RegisterInfluencerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F467C62275A6060017B7E9 /* RegisterInfluencerViewController.swift */; };
+		73F467D22276186F0017B7E9 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F467D12276186F0017B7E9 /* Checkbox.swift */; };
+		73F467D32276186F0017B7E9 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F467D12276186F0017B7E9 /* Checkbox.swift */; };
+		73F467D42276186F0017B7E9 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F467D12276186F0017B7E9 /* Checkbox.swift */; };
+		9A064DFB9CED683AFE325810 /* Pods_ConnusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E5EF40CB872385C44D154A0 /* Pods_ConnusTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +55,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		260C12B1590F21CE57D0BE3D /* Pods-ConnusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnusUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConnusUITests/Pods-ConnusUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		34DAB7EC6BD08FC200682033 /* Pods-Connus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Connus/Pods-Connus.release.xcconfig"; sourceTree = "<group>"; };
+		5E5EF40CB872385C44D154A0 /* Pods_ConnusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConnusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		662142423EB08EAC406B372B /* Pods_ConnusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConnusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C279B2033A913EEFC5A380C /* Pods-ConnusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConnusTests/Pods-ConnusTests.release.xcconfig"; sourceTree = "<group>"; };
+		7384A7552279E5E20020CAF6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		7384A757227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterInfluencerViewController.swift; sourceTree = "<group>"; };
+		7384A75B227A310C0020CAF6 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		73F46788227381010017B7E9 /* Connus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Connus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F4678B227381010017B7E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73F4678D227381010017B7E9 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +77,14 @@
 		73F467A9227381030017B7E9 /* ConnusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConnusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F467AD227381030017B7E9 /* ConnusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnusUITests.swift; sourceTree = "<group>"; };
 		73F467AF227381030017B7E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73F467BF2273838E0017B7E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		73F467C32273890D0017B7E9 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		73F467C62275A6060017B7E9 /* RegisterInfluencerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInfluencerViewController.swift; sourceTree = "<group>"; };
+		73F467D12276186F0017B7E9 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		782383A976B895F9146C4737 /* Pods_Connus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Connus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80C462067D76A2C6BA132C2A /* Pods-ConnusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnusUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConnusUITests/Pods-ConnusUITests.release.xcconfig"; sourceTree = "<group>"; };
+		90215848B52A9007A4C5840A /* Pods-Connus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Connus/Pods-Connus.debug.xcconfig"; sourceTree = "<group>"; };
+		CB809B2A23A8EEE7DA4541E9 /* Pods-ConnusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConnusTests/Pods-ConnusTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67A54DDD004FF01E7189C3D5 /* Pods_Connus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A064DFB9CED683AFE325810 /* Pods_ConnusTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +108,44 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				440FC7981003C69B17672E8A /* Pods_ConnusUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		059C8474290734D1E20F0477 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				90215848B52A9007A4C5840A /* Pods-Connus.debug.xcconfig */,
+				34DAB7EC6BD08FC200682033 /* Pods-Connus.release.xcconfig */,
+				CB809B2A23A8EEE7DA4541E9 /* Pods-ConnusTests.debug.xcconfig */,
+				6C279B2033A913EEFC5A380C /* Pods-ConnusTests.release.xcconfig */,
+				260C12B1590F21CE57D0BE3D /* Pods-ConnusUITests.debug.xcconfig */,
+				80C462067D76A2C6BA132C2A /* Pods-ConnusUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		31B88F057F30393786716B4B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				782383A976B895F9146C4737 /* Pods_Connus.framework */,
+				5E5EF40CB872385C44D154A0 /* Pods_ConnusTests.framework */,
+				662142423EB08EAC406B372B /* Pods_ConnusUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7384A7542279E5C80020CAF6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7384A7552279E5E20020CAF6 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		73F4677F227381010017B7E9 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +153,8 @@
 				73F467A1227381030017B7E9 /* ConnusTests */,
 				73F467AC227381030017B7E9 /* ConnusUITests */,
 				73F46789227381010017B7E9 /* Products */,
+				059C8474290734D1E20F0477 /* Pods */,
+				31B88F057F30393786716B4B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +171,16 @@
 		73F4678A227381010017B7E9 /* Connus */ = {
 			isa = PBXGroup;
 			children = (
+				7384A7542279E5C80020CAF6 /* Extensions */,
+				73F467CA2275D8B80017B7E9 /* Views */,
+				73F467CF2276182A0017B7E9 /* UIComponents */,
+				73F467C522759F8D0017B7E9 /* ViewControllers */,
 				73F4678B227381010017B7E9 /* AppDelegate.swift */,
-				73F4678D227381010017B7E9 /* FirstViewController.swift */,
-				73F4678F227381010017B7E9 /* SecondViewController.swift */,
 				73F46791227381010017B7E9 /* Main.storyboard */,
 				73F46794227381030017B7E9 /* Assets.xcassets */,
 				73F46796227381030017B7E9 /* LaunchScreen.storyboard */,
 				73F46799227381030017B7E9 /* Info.plist */,
+				73F467BF2273838E0017B7E9 /* GoogleService-Info.plist */,
 			);
 			path = Connus;
 			sourceTree = "<group>";
@@ -128,6 +203,34 @@
 			path = ConnusUITests;
 			sourceTree = "<group>";
 		};
+		73F467C522759F8D0017B7E9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				73F4678D227381010017B7E9 /* FirstViewController.swift */,
+				73F4678F227381010017B7E9 /* SecondViewController.swift */,
+				73F467C32273890D0017B7E9 /* EntryViewController.swift */,
+				73F467C62275A6060017B7E9 /* RegisterInfluencerViewController.swift */,
+				7384A757227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		73F467CA2275D8B80017B7E9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		73F467CF2276182A0017B7E9 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				73F467D12276186F0017B7E9 /* Checkbox.swift */,
+				7384A75B227A310C0020CAF6 /* RadioButton.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +238,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 73F467B2227381030017B7E9 /* Build configuration list for PBXNativeTarget "Connus" */;
 			buildPhases = (
+				437990AB2100E0EF9E91674C /* [CP] Check Pods Manifest.lock */,
 				73F46784227381010017B7E9 /* Sources */,
 				73F46785227381010017B7E9 /* Frameworks */,
 				73F46786227381010017B7E9 /* Resources */,
+				BFF42B51C1983367D1C4D618 /* [CP] Embed Pods Frameworks */,
+				F069EAFD7949DB8F0323A0CC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,6 +258,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 73F467B5227381030017B7E9 /* Build configuration list for PBXNativeTarget "ConnusTests" */;
 			buildPhases = (
+				217ACA75871DC4D882B6CB49 /* [CP] Check Pods Manifest.lock */,
 				73F4679A227381030017B7E9 /* Sources */,
 				73F4679B227381030017B7E9 /* Frameworks */,
 				73F4679C227381030017B7E9 /* Resources */,
@@ -170,6 +277,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 73F467B8227381030017B7E9 /* Build configuration list for PBXNativeTarget "ConnusUITests" */;
 			buildPhases = (
+				739C162FA377F7B2DFB206B3 /* [CP] Check Pods Manifest.lock */,
 				73F467A5227381030017B7E9 /* Sources */,
 				73F467A6227381030017B7E9 /* Frameworks */,
 				73F467A7227381030017B7E9 /* Resources */,
@@ -233,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73F46798227381030017B7E9 /* LaunchScreen.storyboard in Resources */,
+				73F467C02273838E0017B7E9 /* GoogleService-Info.plist in Resources */,
 				73F46795227381030017B7E9 /* Assets.xcassets in Resources */,
 				73F46793227381010017B7E9 /* Main.storyboard in Resources */,
 			);
@@ -242,6 +351,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73F467C12273838E0017B7E9 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,19 +359,157 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73F467C22273838E0017B7E9 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		217ACA75871DC4D882B6CB49 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ConnusTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		437990AB2100E0EF9E91674C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Connus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		739C162FA377F7B2DFB206B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ConnusUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFF42B51C1983367D1C4D618 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Connus/Pods-Connus-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Connus/Pods-Connus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F069EAFD7949DB8F0323A0CC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Connus/Pods-Connus-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates-Firestore.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Firestore.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Connus/Pods-Connus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		73F46784227381010017B7E9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7384A75C227A310C0020CAF6 /* RadioButton.swift in Sources */,
 				73F46790227381010017B7E9 /* SecondViewController.swift in Sources */,
+				73F467C42273890D0017B7E9 /* EntryViewController.swift in Sources */,
+				7384A758227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift in Sources */,
+				73F467D22276186F0017B7E9 /* Checkbox.swift in Sources */,
+				73F467C72275A6060017B7E9 /* RegisterInfluencerViewController.swift in Sources */,
 				73F4678C227381010017B7E9 /* AppDelegate.swift in Sources */,
 				73F4678E227381010017B7E9 /* FirstViewController.swift in Sources */,
+				7384A7562279E5E20020CAF6 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +518,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				73F467A3227381030017B7E9 /* ConnusTests.swift in Sources */,
+				73F467C82275A6060017B7E9 /* RegisterInfluencerViewController.swift in Sources */,
+				7384A75D227A310C0020CAF6 /* RadioButton.swift in Sources */,
+				7384A759227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift in Sources */,
+				73F467D32276186F0017B7E9 /* Checkbox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +530,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				73F467AE227381030017B7E9 /* ConnusUITests.swift in Sources */,
+				73F467C92275A6060017B7E9 /* RegisterInfluencerViewController.swift in Sources */,
+				7384A75E227A310C0020CAF6 /* RadioButton.swift in Sources */,
+				7384A75A227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift in Sources */,
+				73F467D42276186F0017B7E9 /* Checkbox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +690,7 @@
 		};
 		73F467B3227381030017B7E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90215848B52A9007A4C5840A /* Pods-Connus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -452,6 +709,7 @@
 		};
 		73F467B4227381030017B7E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34DAB7EC6BD08FC200682033 /* Pods-Connus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -470,6 +728,7 @@
 		};
 		73F467B6227381030017B7E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB809B2A23A8EEE7DA4541E9 /* Pods-ConnusTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -491,6 +750,7 @@
 		};
 		73F467B7227381030017B7E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C279B2033A913EEFC5A380C /* Pods-ConnusTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +772,7 @@
 		};
 		73F467B9227381030017B7E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 260C12B1590F21CE57D0BE3D /* Pods-ConnusUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +793,7 @@
 		};
 		73F467BA227381030017B7E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80C462067D76A2C6BA132C2A /* Pods-ConnusUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
