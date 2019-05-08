@@ -1,0 +1,6 @@
+framework module Pods_ConnusUITests {
+  umbrella header "Pods-ConnusUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
