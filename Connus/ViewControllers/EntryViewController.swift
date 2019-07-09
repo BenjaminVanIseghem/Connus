@@ -45,7 +45,7 @@ extension EntryViewController : FUIAuthDelegate {
             return
         }
         
-        performSegue(withIdentifier: "homeInfluencer", sender: self)
+        performSegue(withIdentifier: "loginInfluencer", sender: self)
     }
     
 }
