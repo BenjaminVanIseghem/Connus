@@ -9,13 +9,12 @@
 import UIKit
 import Firebase
 
-class SwipeController: UIViewController {
+class SwipeViewController: UIViewController {
 
-    @IBOutlet weak var user: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        user.text = Auth.auth().currentUser?.email
+        
     }
 
 
