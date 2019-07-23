@@ -6,7 +6,6 @@
 //  Copyright © 2019 Connus. All rights reserved.
 //
 
-import Foundation
 import Firebase
 import UIKit
 
@@ -50,7 +49,7 @@ class SecondRegisterInfluencerViewController : UIViewController {
                 return
             }
             guard let uid = result?.user.uid else { return }
-        
+            
             // Upload the file to the path "images/rivers.jpg"
             if self.profilePic != nil {
                 let storageRef = Storage.storage().reference().child("profilepics/"+uid+".png")

@@ -13,36 +13,70 @@
         <!--Profile-->
         <scene sceneID="QbI-D4-5td">
             <objects>
-                <viewController id="JOm-QU-LCP" customClass="LogOutInfluencer" sceneMemberID="viewController">
+                <viewController id="JOm-QU-LCP" customClass="ProfileInfluencerViewController" customModule="Connus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jqR-zF-yhJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Are you sure?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fb-Pn-Des">
-                                <rect key="frame" x="113" y="424" width="189" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pv-Pl-t6w">
-                                <rect key="frame" x="181" y="498" width="52" height="30"/>
+                                <rect key="frame" x="329" y="778" width="65" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Log out"/>
                                 <connections>
+                                    <action selector="logOutBtnPressed:" destination="JOm-QU-LCP" eventType="touchUpInside" id="5Ma-A0-vdn"/>
                                     <segue destination="qaD-5y-rxc" kind="show" identifier="logOutInfluencer" id="Lou-Ah-Mg9"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="empty_user" translatesAutoresizingMaskIntoConstraints="NO" id="yXd-4z-9Qg">
+                                <rect key="frame" x="87" y="60" width="240" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Full Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VtH-fD-VVk">
+                                <rect key="frame" x="132" y="222" width="150" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Age" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nd0-o9-eQn">
+                                <rect key="frame" x="182" y="479" width="50" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="BIo" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="Yg1-iY-MvI">
+                                <rect key="frame" x="20" y="273" width="374" height="181"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Region" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nci-l3-xte">
+                                <rect key="frame" x="132" y="566" width="150" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fIX-lI-a3q"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="second" id="jgu-x8-2WV"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="ageLbl" destination="nd0-o9-eQn" id="wvm-Ja-r13"/>
+                        <outlet property="bioTextView" destination="Yg1-iY-MvI" id="hVO-2p-S08"/>
+                        <outlet property="nameLbl" destination="VtH-fD-VVk" id="XsU-Yq-N7B"/>
+                        <outlet property="profileImageView" destination="yXd-4z-9Qg" id="SbH-l6-FBh"/>
+                        <outlet property="regionLbl" destination="Nci-l3-xte" id="rio-4I-CKQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3uZ-8L-WqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1090" y="-1455"/>
+            <point key="canvasLocation" x="1089.8550724637682" y="-1455.1339285714284"/>
         </scene>
         <!--SwipeViewController-->
         <scene sceneID="hNz-n2-bh7">
@@ -67,16 +101,32 @@
                                         <rect key="frame" x="0.0" y="119" width="240" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="thumbs_up" translatesAutoresizingMaskIntoConstraints="NO" id="0KE-76-Aqe">
+                                        <rect key="frame" x="54" y="119" width="133" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ZmZ-OV-k1I" appends="YES" id="uCa-6o-NO8"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7Ha-qy-HQw"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Swipe" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="thumbImageView" destination="0KE-76-Aqe" id="bVE-ps-Zl5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="ZmZ-OV-k1I">
+                    <connections>
+                        <action selector="panCard:" destination="9pv-A4-QxB" id="wYZ-VE-Lw4"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1092.753623188406" y="-680.35714285714278"/>
         </scene>
@@ -767,6 +817,7 @@
         <image name="empty_user" width="1000" height="1000"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
+        <image name="thumbs_up" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6aR-CV-m4m"/>

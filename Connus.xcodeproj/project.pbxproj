@@ -16,14 +16,16 @@
 		7384A75C227A310C0020CAF6 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A75B227A310C0020CAF6 /* RadioButton.swift */; };
 		7384A75D227A310C0020CAF6 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A75B227A310C0020CAF6 /* RadioButton.swift */; };
 		7384A75E227A310C0020CAF6 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A75B227A310C0020CAF6 /* RadioButton.swift */; };
-		73CEACC422DDF9F3004A891A /* LogOuInfluencer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEACC322DDF9F3004A891A /* LogOuInfluencer.swift */; };
-		73CEACC522DDF9F3004A891A /* LogOuInfluencer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEACC322DDF9F3004A891A /* LogOuInfluencer.swift */; };
-		73CEACC622DDF9F3004A891A /* LogOuInfluencer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEACC322DDF9F3004A891A /* LogOuInfluencer.swift */; };
+		73CEACC422DDF9F3004A891A /* ProfileInfluencerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEACC322DDF9F3004A891A /* ProfileInfluencerViewController.swift */; };
+		73CEACC522DDF9F3004A891A /* ProfileInfluencerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEACC322DDF9F3004A891A /* ProfileInfluencerViewController.swift */; };
+		73CEACC622DDF9F3004A891A /* ProfileInfluencerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEACC322DDF9F3004A891A /* ProfileInfluencerViewController.swift */; };
+		73CEACC822DF4DA5004A891A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73CEACC722DF4DA5004A891A /* Assets.xcassets */; };
+		73CEACC922DF4DA5004A891A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73CEACC722DF4DA5004A891A /* Assets.xcassets */; };
+		73CEACCA22DF4DA5004A891A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73CEACC722DF4DA5004A891A /* Assets.xcassets */; };
 		73F4678C227381010017B7E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F4678B227381010017B7E9 /* AppDelegate.swift */; };
 		73F4678E227381010017B7E9 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F4678D227381010017B7E9 /* SwipeViewController.swift */; };
 		73F46790227381010017B7E9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F4678F227381010017B7E9 /* SecondViewController.swift */; };
 		73F46793227381010017B7E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73F46791227381010017B7E9 /* Main.storyboard */; };
-		73F46795227381030017B7E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73F46794227381030017B7E9 /* Assets.xcassets */; };
 		73F46798227381030017B7E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73F46796227381030017B7E9 /* LaunchScreen.storyboard */; };
 		73F467A3227381030017B7E9 /* ConnusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F467A2227381030017B7E9 /* ConnusTests.swift */; };
 		73F467AE227381030017B7E9 /* ConnusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F467AD227381030017B7E9 /* ConnusUITests.swift */; };
@@ -66,13 +68,13 @@
 		7384A7552279E5E20020CAF6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7384A757227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterInfluencerViewController.swift; sourceTree = "<group>"; };
 		7384A75B227A310C0020CAF6 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
-		73CEACC322DDF9F3004A891A /* LogOuInfluencer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOuInfluencer.swift; sourceTree = "<group>"; };
+		73CEACC322DDF9F3004A891A /* ProfileInfluencerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfluencerViewController.swift; sourceTree = "<group>"; };
+		73CEACC722DF4DA5004A891A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73F46788227381010017B7E9 /* Connus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Connus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F4678B227381010017B7E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73F4678D227381010017B7E9 /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
 		73F4678F227381010017B7E9 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		73F46792227381010017B7E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		73F46794227381030017B7E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73F46797227381030017B7E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		73F46799227381030017B7E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73F4679E227381030017B7E9 /* ConnusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConnusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,7 +183,7 @@
 				73F467C522759F8D0017B7E9 /* ViewControllers */,
 				73F4678B227381010017B7E9 /* AppDelegate.swift */,
 				73F46791227381010017B7E9 /* Main.storyboard */,
-				73F46794227381030017B7E9 /* Assets.xcassets */,
+				73CEACC722DF4DA5004A891A /* Assets.xcassets */,
 				73F46796227381030017B7E9 /* LaunchScreen.storyboard */,
 				73F46799227381030017B7E9 /* Info.plist */,
 				73F467BF2273838E0017B7E9 /* GoogleService-Info.plist */,
@@ -215,7 +217,7 @@
 				73F467C32273890D0017B7E9 /* EntryViewController.swift */,
 				73F467C62275A6060017B7E9 /* RegisterInfluencerViewController.swift */,
 				7384A757227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift */,
-				73CEACC322DDF9F3004A891A /* LogOuInfluencer.swift */,
+				73CEACC322DDF9F3004A891A /* ProfileInfluencerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -347,7 +349,7 @@
 			files = (
 				73F46798227381030017B7E9 /* LaunchScreen.storyboard in Resources */,
 				73F467C02273838E0017B7E9 /* GoogleService-Info.plist in Resources */,
-				73F46795227381030017B7E9 /* Assets.xcassets in Resources */,
+				73CEACC822DF4DA5004A891A /* Assets.xcassets in Resources */,
 				73F46793227381010017B7E9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +358,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73CEACC922DF4DA5004A891A /* Assets.xcassets in Resources */,
 				73F467C12273838E0017B7E9 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +367,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73CEACCA22DF4DA5004A891A /* Assets.xcassets in Resources */,
 				73F467C22273838E0017B7E9 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,7 +517,7 @@
 				73F467D22276186F0017B7E9 /* Checkbox.swift in Sources */,
 				73F467C72275A6060017B7E9 /* RegisterInfluencerViewController.swift in Sources */,
 				73F4678C227381010017B7E9 /* AppDelegate.swift in Sources */,
-				73CEACC422DDF9F3004A891A /* LogOuInfluencer.swift in Sources */,
+				73CEACC422DDF9F3004A891A /* ProfileInfluencerViewController.swift in Sources */,
 				73F4678E227381010017B7E9 /* SwipeViewController.swift in Sources */,
 				7384A7562279E5E20020CAF6 /* Extensions.swift in Sources */,
 			);
@@ -524,7 +528,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73F467A3227381030017B7E9 /* ConnusTests.swift in Sources */,
-				73CEACC522DDF9F3004A891A /* LogOuInfluencer.swift in Sources */,
+				73CEACC522DDF9F3004A891A /* ProfileInfluencerViewController.swift in Sources */,
 				73F467C82275A6060017B7E9 /* RegisterInfluencerViewController.swift in Sources */,
 				7384A75D227A310C0020CAF6 /* RadioButton.swift in Sources */,
 				7384A759227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift in Sources */,
@@ -537,7 +541,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73F467AE227381030017B7E9 /* ConnusUITests.swift in Sources */,
-				73CEACC622DDF9F3004A891A /* LogOuInfluencer.swift in Sources */,
+				73CEACC622DDF9F3004A891A /* ProfileInfluencerViewController.swift in Sources */,
 				73F467C92275A6060017B7E9 /* RegisterInfluencerViewController.swift in Sources */,
 				7384A75E227A310C0020CAF6 /* RadioButton.swift in Sources */,
 				7384A75A227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift in Sources */,
