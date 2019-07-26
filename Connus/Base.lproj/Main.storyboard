@@ -86,9 +86,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DSc-ge-NLU" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="20" y="139" width="374" height="587"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="DSc-ge-NLU" customClass="KolodaView" customModule="Koloda">
+                                <rect key="frame" x="20" y="124" width="375" height="601"/>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WEz-XH-Gc7">
                                 <rect key="frame" x="20" y="44" width="374" height="50"/>
@@ -98,11 +97,12 @@
                                 <items>
                                     <barButtonItem title="Item" image="chat" id="L3S-vk-ZxZ"/>
                                 </items>
+                                <color key="tintColor" red="0.0" green="0.56078431370000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="154" translatesAutoresizingMaskIntoConstraints="NO" id="3en-BQ-UW3">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="154" translatesAutoresizingMaskIntoConstraints="NO" id="3en-BQ-UW3">
                                 <rect key="frame" x="40" y="740" width="334" height="60"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxo-C5-SH8">
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxo-C5-SH8" userLabel="dislikeBtn">
                                         <rect key="frame" x="0.0" y="0.0" width="137.33333333333334" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" image="dislike"/>
@@ -110,8 +110,9 @@
                                             <action selector="dislikeBtnPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="9ea-4p-UTM"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mjy-7r-M46">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mjy-7r-M46" userLabel="likeBtn">
                                         <rect key="frame" x="291.33333333333331" y="0.0" width="42.666666666666686" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" image="like"/>
                                         <connections>
                                             <action selector="likeBtnPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="H5P-NR-kk9"/>
@@ -123,17 +124,18 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.023529411764705882" green="0.11372549019607843" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="WEz-XH-Gc7" firstAttribute="leading" secondItem="7Ha-qy-HQw" secondAttribute="leading" constant="20" id="1u1-g2-x3i"/>
                             <constraint firstItem="7Ha-qy-HQw" firstAttribute="trailing" secondItem="3en-BQ-UW3" secondAttribute="trailing" constant="40" id="AYW-Ab-Skg"/>
                             <constraint firstItem="DSc-ge-NLU" firstAttribute="leading" secondItem="7Ha-qy-HQw" secondAttribute="leading" constant="20" id="DSl-o7-3cm"/>
                             <constraint firstItem="7Ha-qy-HQw" firstAttribute="trailing" secondItem="WEz-XH-Gc7" secondAttribute="trailing" constant="20" id="Ghy-9h-fdq"/>
                             <constraint firstItem="3en-BQ-UW3" firstAttribute="leading" secondItem="7Ha-qy-HQw" secondAttribute="leading" constant="40" id="ToR-HI-iUd"/>
-                            <constraint firstItem="7Ha-qy-HQw" firstAttribute="trailing" secondItem="DSc-ge-NLU" secondAttribute="trailing" constant="20" id="oZN-a6-EAU"/>
+                            <constraint firstItem="7Ha-qy-HQw" firstAttribute="trailing" secondItem="DSc-ge-NLU" secondAttribute="trailing" constant="19" id="eFg-Y3-fU9"/>
                             <constraint firstItem="WEz-XH-Gc7" firstAttribute="top" secondItem="7Ha-qy-HQw" secondAttribute="top" id="sY3-vB-8cz"/>
                             <constraint firstItem="3en-BQ-UW3" firstAttribute="top" secondItem="DSc-ge-NLU" secondAttribute="bottom" constant="15" id="v45-Ia-NSh"/>
                             <constraint firstItem="DSc-ge-NLU" firstAttribute="top" secondItem="WEz-XH-Gc7" secondAttribute="bottom" constant="30" id="v4i-fb-aVL"/>
+                            <constraint firstItem="7Ha-qy-HQw" firstAttribute="bottom" secondItem="3en-BQ-UW3" secondAttribute="bottom" constant="13" id="xoc-K2-GNB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Ha-qy-HQw"/>
                     </view>

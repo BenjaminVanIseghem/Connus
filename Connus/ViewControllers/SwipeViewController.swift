@@ -12,10 +12,13 @@ import Koloda
 
 class SwipeViewController: UIViewController {
     
-    @IBOutlet weak var kolodaView: KolodaView!
+    @IBOutlet var kolodaView: KolodaView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        kolodaView.dataSource = self
+        kolodaView.delegate = self
     }
     
     @IBAction func likeBtnPressed(_ sender: UIButton) {
@@ -30,7 +33,6 @@ class SwipeViewController: UIViewController {
 extension SwipeViewController : KolodaViewDelegate {
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
         koloda.reloadData()
-        print("RELOADING")
     }
     
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
@@ -45,15 +47,15 @@ extension SwipeViewController : KolodaViewDataSource {
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
 //        let view = UIImageView(image: UIImage(named: "Connus_White-Blue"))
         let view = (Bundle.main.loadNibNamed("CompanyCardView", owner: self, options: nil)?.first as? CompanyCardView)!
-        
-        view.companyImageView.image = UIImage(named: "Connus_White-Blue")
+
+//        view.companyImageView.image = UIImage(named: "Connus_White-Blue")
         view.companyNameLbl.text = "Connus"
         view.yearLbl.text = "2019"
         view.locationLbl.text = "Zottegem"
         view.sectorLbl.text = "App development"
         view.sizeLbl.text = "3"
         view.quoteTxtView.text = "Work hard, play hard"
-        
+
         view.clipsToBounds = true
         view.layer.cornerRadius = 20
         
@@ -63,11 +65,11 @@ extension SwipeViewController : KolodaViewDataSource {
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
         //Number of companies
         //Make firebase connection and load companies which aren't swiped by the user
-        return 1
+        return 3
     }
     
-//    func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
-//        //Overlay
-//    }
+    func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
+        return Bundle.main.loadNibNamed("LikeOverlayView", owner: self, options: nil)?[0] as? OverlayView
+    }
 }
 
