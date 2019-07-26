@@ -68,7 +68,7 @@ class SecondRegisterInfluencerViewController : UIViewController {
             }
             
             //Values to store in firestore
-            let values = ["email": email, "phone": phoneNumber, "name": self.name, "lastname": self.lastname, "birthdate": self.birthdate, "country": self.country, "gender": self.gender, "profilepicture": picUrl]
+            let values = [EMAIl: email, PHONE: phoneNumber, FIRSTNAME: self.name, LASTNAME: self.lastname, BIRTHDAY: self.birthdate, COUNTRY: self.country, GENDER: self.gender, PROFILEURL: picUrl]
             
             Firestore.firestore().collection(self.collectionpath).document(uid).setData(values as [String : Any])
         })

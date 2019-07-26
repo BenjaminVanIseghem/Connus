@@ -8,88 +8,66 @@
 
 import UIKit
 import Firebase
+import Koloda
 
 class SwipeViewController: UIViewController {
-
-    var divisor: CGFloat!
-    @IBOutlet weak var thumbImageView: UIImageView!
+    
+    @IBOutlet weak var kolodaView: KolodaView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        divisor = (view.frame.width / 2) / 0.61
     }
+    
+    @IBAction func likeBtnPressed(_ sender: UIButton) {
+        kolodaView.swipe(.right)
+    }
+    @IBAction func dislikeBtnPressed(_ sender: UIButton) {
+        kolodaView.swipe(.left)
+    }
+    
+}
 
-    @IBAction func panCard(_ sender: UIPanGestureRecognizer) {
-        let card = sender.view!
-        let point = sender.translation(in: view)
-        let xFromCenter = card.center.x - view.center.x
-        //Scale value which is determined by the distance from the center
-        let scale = min(80 / abs(xFromCenter), 1)
-        
-        //Center of the card is always where the finger is
-        card.center = CGPoint(x: view.center.x + point.x, y: view.center.y + point.y)
-        
-        //Transform card according to distance from center x
-        card.transform = CGAffineTransform(rotationAngle: xFromCenter/divisor).scaledBy(x: scale, y: scale)
-        
-        
-        //Check distance from center
-        //Show correct image with color and alpha values
-        //Rotate image
-        if xFromCenter > 0 {
-            if let thumbsUpImage = UIImage(named: "thumbs_up") {
-                let tintableImage = thumbsUpImage.withRenderingMode(.alwaysTemplate)
-                self.thumbImageView.image = tintableImage
-            }
-            self.thumbImageView.tintColor = UIColor.green
-        } else {
-            if let thumbsDownImage = UIImage(named: "thumbs_down") {
-                let tintableImage = thumbsDownImage.withRenderingMode(.alwaysTemplate)
-                self.thumbImageView.image = tintableImage
-            }
-            self.thumbImageView.tintColor = UIColor.red
-        }
-        
-        self.thumbImageView.alpha = abs(xFromCenter) / view.center.x
-        
-        //End state
-        //Like or dislike
-        if sender.state == UIGestureRecognizer.State.ended {
-            if card.center.x < 75 {
-                //Move to left => "dislike"
-                UIView.animate(withDuration: 0.3, animations: {
-                    card.center = CGPoint(x: card.center.x - 200, y: card.center.y + 75)
-                    card.alpha = 0
-                })
-                swipeDislike()
-                return
-            } else if card.center.x > (view.frame.width - 75){
-                //Move to right => "like"
-                UIView.animate(withDuration: 0.3, animations: {
-                    card.center = CGPoint(x: card.center.x + 200, y: card.center.y + 75)
-                    card.alpha = 0
-                })
-                swipeLike()
-                return
-            }
-            UIView.animate(withDuration: 0.2, animations: {
-                card.center = self.view.center
-            })
-            self.thumbImageView.alpha = 0
-            card.transform = CGAffineTransform.identity
-        }
+extension SwipeViewController : KolodaViewDelegate {
+    func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
+        koloda.reloadData()
+        print("RELOADING")
     }
     
-    func loadCards() {
-        //Load cards to show
+    func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
+        let alert = UIAlertController(title: "Congratulation!", message: "You pressed the card", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        self.present(alert, animated: true)
     }
     
-    func swipeLike() {
-        //Logic for like
+}
+
+extension SwipeViewController : KolodaViewDataSource {
+    func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
+//        let view = UIImageView(image: UIImage(named: "Connus_White-Blue"))
+        let view = (Bundle.main.loadNibNamed("CompanyCardView", owner: self, options: nil)?.first as? CompanyCardView)!
+        
+        view.companyImageView.image = UIImage(named: "Connus_White-Blue")
+        view.companyNameLbl.text = "Connus"
+        view.yearLbl.text = "2019"
+        view.locationLbl.text = "Zottegem"
+        view.sectorLbl.text = "App development"
+        view.sizeLbl.text = "3"
+        view.quoteTxtView.text = "Work hard, play hard"
+        
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 20
+        
+        return view
     }
     
-    func swipeDislike() {
-        //Logic for dislike
+    func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
+        //Number of companies
+        //Make firebase connection and load companies which aren't swiped by the user
+        return 1
     }
+    
+//    func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
+//        //Overlay
+//    }
 }
 

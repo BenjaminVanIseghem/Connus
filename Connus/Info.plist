@@ -2,6 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Coco-Gothic-Bold-Italic-trial.ttf</string>
+		<string>Coco-Gothic-Bold-trial.ttf</string>
+		<string>Coco-Gothic-Italic-trial.ttf</string>
+		<string>Coco-Gothic-Light-Italic-trial.ttf</string>
+		<string>Coco-Gothic-Light-trial.ttf</string>
+		<string>Coco-Gothic-Regular-trial.ttf</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

@@ -11,6 +11,7 @@ pod 'Firebase/Core'
 pod 'FirebaseUI/Auth'
 pod 'FirebaseUI/Firestore'
 pod 'FirebaseUI/Storage'
+pod 'Koloda'
 
   target 'ConnusTests' do
     inherit! :search_paths

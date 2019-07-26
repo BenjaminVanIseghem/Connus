@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		440FC7981003C69B17672E8A /* Pods_ConnusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 662142423EB08EAC406B372B /* Pods_ConnusUITests.framework */; };
 		67A54DDD004FF01E7189C3D5 /* Pods_Connus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 782383A976B895F9146C4737 /* Pods_Connus.framework */; };
+		731B473022EB82B40067C39C /* CompanyCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 731B472F22EB82B40067C39C /* CompanyCardView.xib */; };
+		731B473722EB87770067C39C /* Coco-Gothic-Italic-trial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 731B473122EB87710067C39C /* Coco-Gothic-Italic-trial.ttf */; };
+		731B473822EB87770067C39C /* Coco-Gothic-Bold-Italic-trial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 731B473222EB87720067C39C /* Coco-Gothic-Bold-Italic-trial.ttf */; };
+		731B473922EB87770067C39C /* Coco-Gothic-Bold-trial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 731B473322EB87730067C39C /* Coco-Gothic-Bold-trial.ttf */; };
+		731B473A22EB87770067C39C /* Coco-Gothic-Light-trial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 731B473422EB87750067C39C /* Coco-Gothic-Light-trial.ttf */; };
+		731B473B22EB87770067C39C /* Coco-Gothic-Light-Italic-trial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 731B473522EB87760067C39C /* Coco-Gothic-Light-Italic-trial.ttf */; };
+		731B473C22EB87770067C39C /* Coco-Gothic-Regular-trial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 731B473622EB87770067C39C /* Coco-Gothic-Regular-trial.ttf */; };
 		7384A7562279E5E20020CAF6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A7552279E5E20020CAF6 /* Extensions.swift */; };
 		7384A758227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A757227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift */; };
 		7384A759227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A757227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift */; };
@@ -16,12 +23,14 @@
 		7384A75C227A310C0020CAF6 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A75B227A310C0020CAF6 /* RadioButton.swift */; };
 		7384A75D227A310C0020CAF6 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A75B227A310C0020CAF6 /* RadioButton.swift */; };
 		7384A75E227A310C0020CAF6 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A75B227A310C0020CAF6 /* RadioButton.swift */; };
+		73AEE50322E861BE008CA7EF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AEE50222E861BE008CA7EF /* Constants.swift */; };
 		73CEACC422DDF9F3004A891A /* ProfileInfluencerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEACC322DDF9F3004A891A /* ProfileInfluencerViewController.swift */; };
 		73CEACC522DDF9F3004A891A /* ProfileInfluencerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEACC322DDF9F3004A891A /* ProfileInfluencerViewController.swift */; };
 		73CEACC622DDF9F3004A891A /* ProfileInfluencerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEACC322DDF9F3004A891A /* ProfileInfluencerViewController.swift */; };
 		73CEACC822DF4DA5004A891A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73CEACC722DF4DA5004A891A /* Assets.xcassets */; };
 		73CEACC922DF4DA5004A891A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73CEACC722DF4DA5004A891A /* Assets.xcassets */; };
 		73CEACCA22DF4DA5004A891A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73CEACC722DF4DA5004A891A /* Assets.xcassets */; };
+		73EC813322EB43530023D174 /* CompanyCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EC813222EB43530023D174 /* CompanyCardView.swift */; };
 		73F4678C227381010017B7E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F4678B227381010017B7E9 /* AppDelegate.swift */; };
 		73F4678E227381010017B7E9 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F4678D227381010017B7E9 /* SwipeViewController.swift */; };
 		73F46790227381010017B7E9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F4678F227381010017B7E9 /* SecondViewController.swift */; };
@@ -65,11 +74,20 @@
 		5E5EF40CB872385C44D154A0 /* Pods_ConnusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConnusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		662142423EB08EAC406B372B /* Pods_ConnusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConnusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C279B2033A913EEFC5A380C /* Pods-ConnusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConnusTests/Pods-ConnusTests.release.xcconfig"; sourceTree = "<group>"; };
+		731B472F22EB82B40067C39C /* CompanyCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyCardView.xib; sourceTree = "<group>"; };
+		731B473122EB87710067C39C /* Coco-Gothic-Italic-trial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Coco-Gothic-Italic-trial.ttf"; sourceTree = "<group>"; };
+		731B473222EB87720067C39C /* Coco-Gothic-Bold-Italic-trial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Coco-Gothic-Bold-Italic-trial.ttf"; sourceTree = "<group>"; };
+		731B473322EB87730067C39C /* Coco-Gothic-Bold-trial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Coco-Gothic-Bold-trial.ttf"; sourceTree = "<group>"; };
+		731B473422EB87750067C39C /* Coco-Gothic-Light-trial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Coco-Gothic-Light-trial.ttf"; sourceTree = "<group>"; };
+		731B473522EB87760067C39C /* Coco-Gothic-Light-Italic-trial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Coco-Gothic-Light-Italic-trial.ttf"; sourceTree = "<group>"; };
+		731B473622EB87770067C39C /* Coco-Gothic-Regular-trial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Coco-Gothic-Regular-trial.ttf"; sourceTree = "<group>"; };
 		7384A7552279E5E20020CAF6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7384A757227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterInfluencerViewController.swift; sourceTree = "<group>"; };
 		7384A75B227A310C0020CAF6 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		73AEE50222E861BE008CA7EF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		73CEACC322DDF9F3004A891A /* ProfileInfluencerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfluencerViewController.swift; sourceTree = "<group>"; };
 		73CEACC722DF4DA5004A891A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		73EC813222EB43530023D174 /* CompanyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCardView.swift; sourceTree = "<group>"; };
 		73F46788227381010017B7E9 /* Connus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Connus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F4678B227381010017B7E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73F4678D227381010017B7E9 /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
@@ -144,10 +162,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		731B473D22EB877C0067C39C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				731B473222EB87720067C39C /* Coco-Gothic-Bold-Italic-trial.ttf */,
+				731B473322EB87730067C39C /* Coco-Gothic-Bold-trial.ttf */,
+				731B473122EB87710067C39C /* Coco-Gothic-Italic-trial.ttf */,
+				731B473522EB87760067C39C /* Coco-Gothic-Light-Italic-trial.ttf */,
+				731B473422EB87750067C39C /* Coco-Gothic-Light-trial.ttf */,
+				731B473622EB87770067C39C /* Coco-Gothic-Regular-trial.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		7384A7542279E5C80020CAF6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				7384A7552279E5E20020CAF6 /* Extensions.swift */,
+				73AEE50222E861BE008CA7EF /* Constants.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -177,6 +209,7 @@
 		73F4678A227381010017B7E9 /* Connus */ = {
 			isa = PBXGroup;
 			children = (
+				731B473D22EB877C0067C39C /* Fonts */,
 				7384A7542279E5C80020CAF6 /* Extensions */,
 				73F467CA2275D8B80017B7E9 /* Views */,
 				73F467CF2276182A0017B7E9 /* UIComponents */,
@@ -225,6 +258,8 @@
 		73F467CA2275D8B80017B7E9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				73EC813222EB43530023D174 /* CompanyCardView.swift */,
+				731B472F22EB82B40067C39C /* CompanyCardView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -348,9 +383,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				73F46798227381030017B7E9 /* LaunchScreen.storyboard in Resources */,
+				731B473822EB87770067C39C /* Coco-Gothic-Bold-Italic-trial.ttf in Resources */,
 				73F467C02273838E0017B7E9 /* GoogleService-Info.plist in Resources */,
 				73CEACC822DF4DA5004A891A /* Assets.xcassets in Resources */,
+				731B473B22EB87770067C39C /* Coco-Gothic-Light-Italic-trial.ttf in Resources */,
+				731B473922EB87770067C39C /* Coco-Gothic-Bold-trial.ttf in Resources */,
+				731B473A22EB87770067C39C /* Coco-Gothic-Light-trial.ttf in Resources */,
 				73F46793227381010017B7E9 /* Main.storyboard in Resources */,
+				731B473022EB82B40067C39C /* CompanyCardView.xib in Resources */,
+				731B473722EB87770067C39C /* Coco-Gothic-Italic-trial.ttf in Resources */,
+				731B473C22EB87770067C39C /* Coco-Gothic-Regular-trial.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,12 +495,14 @@
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Koloda/Koloda.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -467,12 +511,14 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Koloda.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -511,12 +557,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7384A75C227A310C0020CAF6 /* RadioButton.swift in Sources */,
+				73AEE50322E861BE008CA7EF /* Constants.swift in Sources */,
 				73F46790227381010017B7E9 /* SecondViewController.swift in Sources */,
 				73F467C42273890D0017B7E9 /* EntryViewController.swift in Sources */,
 				7384A758227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift in Sources */,
 				73F467D22276186F0017B7E9 /* Checkbox.swift in Sources */,
 				73F467C72275A6060017B7E9 /* RegisterInfluencerViewController.swift in Sources */,
 				73F4678C227381010017B7E9 /* AppDelegate.swift in Sources */,
+				73EC813322EB43530023D174 /* CompanyCardView.swift in Sources */,
 				73CEACC422DDF9F3004A891A /* ProfileInfluencerViewController.swift in Sources */,
 				73F4678E227381010017B7E9 /* SwipeViewController.swift in Sources */,
 				7384A7562279E5E20020CAF6 /* Extensions.swift in Sources */,
