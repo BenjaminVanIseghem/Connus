@@ -35,6 +35,7 @@ extension SwipeViewController : KolodaViewDelegate {
         koloda.reloadData()
     }
     
+    //When card gets selected
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
         let alert = UIAlertController(title: "Congratulation!", message: "You pressed the card", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
@@ -44,11 +45,9 @@ extension SwipeViewController : KolodaViewDelegate {
 }
 
 extension SwipeViewController : KolodaViewDataSource {
+    //Select view to load for card at index
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-//        let view = UIImageView(image: UIImage(named: "Connus_White-Blue"))
         let view = (Bundle.main.loadNibNamed("CompanyCardView", owner: self, options: nil)?.first as? CompanyCardView)!
-
-//        view.companyImageView.image = UIImage(named: "Connus_White-Blue")
         view.companyNameLbl.text = "Connus"
         view.yearLbl.text = "2019"
         view.locationLbl.text = "Zottegem"
@@ -68,6 +67,7 @@ extension SwipeViewController : KolodaViewDataSource {
         return 3
     }
     
+    //Like or dislike overlay
     func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
         return Bundle.main.loadNibNamed("LikeOverlayView", owner: self, options: nil)?[0] as? OverlayView
     }

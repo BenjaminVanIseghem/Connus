@@ -19,7 +19,7 @@ class RegisterInfluencerViewController : UIViewController, UINavigationControlle
     var name: String?
     var lastname: String?
     var country: String?
-    var birthdate: String?
+    var birthdate: Timestamp?
     var gender: String?
     var profilePic: UIImage?
     
@@ -41,7 +41,7 @@ class RegisterInfluencerViewController : UIViewController, UINavigationControlle
             nameTextField.text = name
             lastnameTextField.text = lastname
             countryTextField.text = country
-            birthDateTextField.text = birthdate
+            birthDateTextField.text = ""
             if profilePic != nil {
                 imageView.image = profilePic
             }
@@ -250,7 +250,6 @@ class RegisterInfluencerViewController : UIViewController, UINavigationControlle
     
     @IBAction func goToNextScreen(_ sender: Any) {
         if checkFilledIn() {
-            print("This works!")
             performSegue(withIdentifier: "goToSecondRegisterInfluencer", sender: self)
         } else {
             notFilledInWarning()
@@ -292,7 +291,14 @@ class RegisterInfluencerViewController : UIViewController, UINavigationControlle
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToSecondRegisterInfluencer" {
             let controller = segue.destination as! SecondRegisterInfluencerViewController
-            controller.birthdate = self.birthDateTextField.text!
+            //Extract Date from birthdateTextField
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd/MM/yyyy"
+            guard let date = formatter.date(from: self.birthDateTextField.text!) else {
+                print("Error extracting date from UI")
+                return
+            }
+            controller.birthdate = Timestamp(date: date)
             controller.country = self.countryTextField.text!
             controller.name = self.nameTextField.text!
             controller.lastname = self.lastnameTextField.text!
@@ -346,7 +352,6 @@ extension RegisterInfluencerViewController: UIPickerViewDelegate, UIPickerViewDa
             label = UILabel()
         }
         label.textAlignment = .center
-//        label.font = UIFont(name: "Menlo-Regular", size: 17)
         
         label.text = countries[row]
         

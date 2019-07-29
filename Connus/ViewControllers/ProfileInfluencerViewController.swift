@@ -12,9 +12,7 @@ import Firebase
 
 class ProfileInfluencerViewController : UIViewController {
     //Variables
-    let collectionpath = "influencers"
     var imageUrl = ""
-    let db = Firestore.firestore()
     
     //UI Items
     @IBOutlet weak var profileImageView: UIImageView!
@@ -29,8 +27,8 @@ class ProfileInfluencerViewController : UIViewController {
         settings.areTimestampsInSnapshotsEnabled = true
         db.settings = settings
         profileImageView.setRounded()
+        bioTextView.layer.cornerRadius = 20
         loadData()
-        //Auth.auth().currentUser
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -56,7 +54,7 @@ class ProfileInfluencerViewController : UIViewController {
             return
         }
         //Create ref for influencer
-        let influencerRef = db.collection(collectionpath).document(currentUsr)
+        let influencerRef = db.collection(INFLUENCERPATH).document(currentUsr)
         //Get data from ref
         influencerRef.addSnapshotListener{ (snapshot, error) in
             if let err = error {
@@ -80,21 +78,22 @@ class ProfileInfluencerViewController : UIViewController {
                 self.ageLbl.text = String(age)
                 self.bioTextView.text = bio
                 self.regionLbl.text = country
-                print("HELLZ YEAH")
                 
-                //Load image from firebase
-                let profilImageUrl = data![PROFILEURL] as? String
-                print("HELLZ YEAH2")
-                let imageUrl = NSURL(string: profilImageUrl!)
-                URLSession.shared.dataTask(with: imageUrl! as URL, completionHandler: { (data, response, error) in
-                    if error != nil {
-                        print(error as Any)
-                        return
-                    }
-                    self.profileImageView.image = UIImage(data: data!)
-                    print("HELLZ YEAH3")
-                })
                 
+                if let profileURL = data![PROFILEURL] as? String {
+                    let storageRef = Storage.storage().reference(forURL: profileURL)
+                    self.profileImageView.sd_setImage(with: storageRef, placeholderImage: UIImage(named: "empty_user"))
+                }
+                else {
+                    print("profileURL is nil")
+                }
+//                let imageUrl = data![PROFILEURL] as? String
+//
+//                let storageRef = self.storage.reference(forURL: imageUrl!)
+//                storageRef.getData(maxSize: 1 * 1024 * 1024) {(data, error) -> Void in
+//                    let pic = UIImage(data: data!)
+//                    self.profileImageView.image = pic
+//                }
             }
             
         }
