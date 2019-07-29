@@ -13,6 +13,8 @@ import Firebase
 class ProfileInfluencerViewController : UIViewController {
     //Variables
     var imageUrl = ""
+    var listener : ListenerRegistration?
+    let currentUID = Auth.auth().currentUser?.uid
     
     //UI Items
     @IBOutlet weak var profileImageView: UIImageView!
@@ -23,22 +25,18 @@ class ProfileInfluencerViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let settings = db.settings
-        settings.areTimestampsInSnapshotsEnabled = true
-        db.settings = settings
         profileImageView.setRounded()
         bioTextView.layer.cornerRadius = 20
+        
         loadData()
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-
     }
     
     //Log out button
     @IBAction func logOutBtnPressed(_ sender: UIButton) {
         do {
             try Auth.auth().signOut()
+            //remove snapshot listener
+            listener?.remove()
             self.performSegue(withIdentifier: "logOutInfluencer", sender: self)
         }
         catch{
@@ -48,15 +46,15 @@ class ProfileInfluencerViewController : UIViewController {
     
     //Load personal information from user into view
     func loadData(){
-        //Fetch current user
-        guard let currentUsr = Auth.auth().currentUser?.uid else {
+        //Check current user
+        guard let uid = currentUID else {
             print("No current user")
             return
         }
         //Create ref for influencer
-        let influencerRef = db.collection(INFLUENCERPATH).document(currentUsr)
+        let influencerRef = db.collection(INFLUENCERPATH).document(uid)
         //Get data from ref
-        influencerRef.addSnapshotListener{ (snapshot, error) in
+        listener = influencerRef.addSnapshotListener{ (snapshot, error) in
             if let err = error {
                 debugPrint(err)
                 print("Error with snapshot")
@@ -71,37 +69,51 @@ class ProfileInfluencerViewController : UIViewController {
                 
                 self.nameLbl.text = name + " " + lastname
                 
-                let birthdate = birthTimestamp.dateValue()
-                let ageComponents = Calendar.current.dateComponents([.year], from: birthdate, to: Date())
-                let age = ageComponents.year!
-                
+                //Calculate age and set label
+                let age = self.calculateAge(birthdateTimestamp: birthTimestamp)
                 self.ageLbl.text = String(age)
+                
                 self.bioTextView.text = bio
                 self.regionLbl.text = country
                 
-                
                 if let profileURL = data![PROFILEURL] as? String {
-                    let storageRef = Storage.storage().reference(forURL: profileURL)
-                    self.profileImageView.sd_setImage(with: storageRef, placeholderImage: UIImage(named: "empty_user"))
+                    self.downloadImage(url: profileURL)
                 }
                 else {
                     print("profileURL is nil")
                 }
-//                let imageUrl = data![PROFILEURL] as? String
-//
-//                let storageRef = self.storage.reference(forURL: imageUrl!)
-//                storageRef.getData(maxSize: 1 * 1024 * 1024) {(data, error) -> Void in
-//                    let pic = UIImage(data: data!)
-//                    self.profileImageView.image = pic
-//                }
             }
-            
         }
     }
     
-    //Load data from current user using Auth.auth().currentUser
-    //Change labels to data from user
-    //Add button to change data -> new screen or current screen with text instead of labels
-    //Logout button has connection with firebase to log out current user
+    func downloadImage(url : String) {
+        //Create reference for given url
+        let storageRef = storage.reference(forURL: url)
+        
+        //Download images from reference
+        storageRef.downloadURL { url, error in
+            //Set data from url as NSData object
+            let data = NSData(contentsOf: url!)
+            //Convert data object to image
+            let image = UIImage(data: data! as Data)
+            
+            //Create CIImage from image
+            let ciImage = CIImage(image: image!)
+            //Convert CIImage to CGImage
+            let cgImage = self.convertCIImageToCGImage(inputImage: ciImage!)
+            //Create new UIImage from given CGImage with upside down orientation
+            let profileImage = UIImage(cgImage: cgImage! as CGImage, scale: CGFloat(integerLiteral: 1), orientation: .down)
+            //Set image
+            self.profileImageView.image = profileImage
+        }
+    }
+    
+    func convertCIImageToCGImage(inputImage: CIImage) -> CGImage! {
+        let context = CIContext(options: nil)
+        return context.createCGImage(inputImage, from: inputImage.extent)
+    }
+    
+    
+    //TODO Add button to change data -> new screen or current screen with text instead of labels
     
 }
