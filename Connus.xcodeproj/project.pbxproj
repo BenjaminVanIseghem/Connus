@@ -25,7 +25,21 @@
 		7384A75C227A310C0020CAF6 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A75B227A310C0020CAF6 /* RadioButton.swift */; };
 		7384A75D227A310C0020CAF6 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A75B227A310C0020CAF6 /* RadioButton.swift */; };
 		7384A75E227A310C0020CAF6 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A75B227A310C0020CAF6 /* RadioButton.swift */; };
+		7387E30822F03E2300C2D3B1 /* PasswordForgottenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7387E30722F03E2300C2D3B1 /* PasswordForgottenViewController.swift */; };
+		73974C7C22EF66F70035FDCB /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73974C7B22EF66F70035FDCB /* LogInViewController.swift */; };
+		73974C7E22EF6E0B0035FDCB /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73974C7D22EF6E0B0035FDCB /* CreateAccountViewController.swift */; };
+		73974C7F22EF6E0B0035FDCB /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73974C7D22EF6E0B0035FDCB /* CreateAccountViewController.swift */; };
+		73974C8022EF6E0B0035FDCB /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73974C7D22EF6E0B0035FDCB /* CreateAccountViewController.swift */; };
+		73974C8222EF70CB0035FDCB /* ChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73974C8122EF70CB0035FDCB /* ChoiceViewController.swift */; };
+		73974C8322EF70CB0035FDCB /* ChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73974C8122EF70CB0035FDCB /* ChoiceViewController.swift */; };
+		73974C8422EF70CB0035FDCB /* ChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73974C8122EF70CB0035FDCB /* ChoiceViewController.swift */; };
+		73974CC322EF7EAC0035FDCB /* RegisterInfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73974CC222EF7EAC0035FDCB /* RegisterInfViewController.swift */; };
+		73974CC422EF7EAC0035FDCB /* RegisterInfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73974CC222EF7EAC0035FDCB /* RegisterInfViewController.swift */; };
+		73974CC522EF7EAC0035FDCB /* RegisterInfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73974CC222EF7EAC0035FDCB /* RegisterInfViewController.swift */; };
 		73AEE50322E861BE008CA7EF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AEE50222E861BE008CA7EF /* Constants.swift */; };
+		73C1A9C722EF281A00972785 /* RegisterBrandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C1A9C622EF281A00972785 /* RegisterBrandViewController.swift */; };
+		73C1A9CD22EF380200972785 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F4678D227381010017B7E9 /* SwipeViewController.swift */; };
+		73C1A9CE22EF380200972785 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F4678D227381010017B7E9 /* SwipeViewController.swift */; };
 		73CEACC422DDF9F3004A891A /* ProfileInfluencerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEACC322DDF9F3004A891A /* ProfileInfluencerViewController.swift */; };
 		73CEACC522DDF9F3004A891A /* ProfileInfluencerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEACC322DDF9F3004A891A /* ProfileInfluencerViewController.swift */; };
 		73CEACC622DDF9F3004A891A /* ProfileInfluencerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEACC322DDF9F3004A891A /* ProfileInfluencerViewController.swift */; };
@@ -35,7 +49,6 @@
 		73EC813322EB43530023D174 /* CompanyCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EC813222EB43530023D174 /* CompanyCardView.swift */; };
 		73F4678C227381010017B7E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F4678B227381010017B7E9 /* AppDelegate.swift */; };
 		73F4678E227381010017B7E9 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F4678D227381010017B7E9 /* SwipeViewController.swift */; };
-		73F46790227381010017B7E9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F4678F227381010017B7E9 /* SecondViewController.swift */; };
 		73F46793227381010017B7E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73F46791227381010017B7E9 /* Main.storyboard */; };
 		73F46798227381030017B7E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73F46796227381030017B7E9 /* LaunchScreen.storyboard */; };
 		73F467A3227381030017B7E9 /* ConnusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F467A2227381030017B7E9 /* ConnusTests.swift */; };
@@ -88,14 +101,19 @@
 		7384A7552279E5E20020CAF6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7384A757227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterInfluencerViewController.swift; sourceTree = "<group>"; };
 		7384A75B227A310C0020CAF6 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		7387E30722F03E2300C2D3B1 /* PasswordForgottenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordForgottenViewController.swift; sourceTree = "<group>"; };
+		73974C7B22EF66F70035FDCB /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		73974C7D22EF6E0B0035FDCB /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		73974C8122EF70CB0035FDCB /* ChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceViewController.swift; sourceTree = "<group>"; };
+		73974CC222EF7EAC0035FDCB /* RegisterInfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInfViewController.swift; sourceTree = "<group>"; };
 		73AEE50222E861BE008CA7EF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		73C1A9C622EF281A00972785 /* RegisterBrandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBrandViewController.swift; sourceTree = "<group>"; };
 		73CEACC322DDF9F3004A891A /* ProfileInfluencerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfluencerViewController.swift; sourceTree = "<group>"; };
 		73CEACC722DF4DA5004A891A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73EC813222EB43530023D174 /* CompanyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCardView.swift; sourceTree = "<group>"; };
 		73F46788227381010017B7E9 /* Connus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Connus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F4678B227381010017B7E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73F4678D227381010017B7E9 /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
-		73F4678F227381010017B7E9 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		73F46792227381010017B7E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		73F46797227381030017B7E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		73F46799227381030017B7E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -188,6 +206,51 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		73C1A9C822EF374300972785 /* Register Influencer */ = {
+			isa = PBXGroup;
+			children = (
+				73F467C62275A6060017B7E9 /* RegisterInfluencerViewController.swift */,
+				7384A757227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift */,
+				73974CC222EF7EAC0035FDCB /* RegisterInfViewController.swift */,
+			);
+			path = "Register Influencer";
+			sourceTree = "<group>";
+		};
+		73C1A9C922EF377E00972785 /* Register Brand */ = {
+			isa = PBXGroup;
+			children = (
+				73C1A9C622EF281A00972785 /* RegisterBrandViewController.swift */,
+			);
+			path = "Register Brand";
+			sourceTree = "<group>";
+		};
+		73C1A9CA22EF378D00972785 /* Influencer Flow  */ = {
+			isa = PBXGroup;
+			children = (
+				73F4678D227381010017B7E9 /* SwipeViewController.swift */,
+				73CEACC322DDF9F3004A891A /* ProfileInfluencerViewController.swift */,
+			);
+			path = "Influencer Flow ";
+			sourceTree = "<group>";
+		};
+		73C1A9CB22EF37A200972785 /* Brand Flow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Brand Flow";
+			sourceTree = "<group>";
+		};
+		73C1A9CC22EF37D700972785 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				73974C7B22EF66F70035FDCB /* LogInViewController.swift */,
+				73974C7D22EF6E0B0035FDCB /* CreateAccountViewController.swift */,
+				73974C8122EF70CB0035FDCB /* ChoiceViewController.swift */,
+				7387E30722F03E2300C2D3B1 /* PasswordForgottenViewController.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
 		73F4677F227381010017B7E9 = {
 			isa = PBXGroup;
 			children = (
@@ -249,12 +312,12 @@
 		73F467C522759F8D0017B7E9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				73F4678D227381010017B7E9 /* SwipeViewController.swift */,
-				73F4678F227381010017B7E9 /* SecondViewController.swift */,
+				73C1A9CC22EF37D700972785 /* General */,
+				73C1A9CB22EF37A200972785 /* Brand Flow */,
+				73C1A9CA22EF378D00972785 /* Influencer Flow  */,
+				73C1A9C922EF377E00972785 /* Register Brand */,
+				73C1A9C822EF374300972785 /* Register Influencer */,
 				73F467C32273890D0017B7E9 /* EntryViewController.swift */,
-				73F467C62275A6060017B7E9 /* RegisterInfluencerViewController.swift */,
-				7384A757227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift */,
-				73CEACC322DDF9F3004A891A /* ProfileInfluencerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -563,19 +626,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73974C7E22EF6E0B0035FDCB /* CreateAccountViewController.swift in Sources */,
 				7384A75C227A310C0020CAF6 /* RadioButton.swift in Sources */,
+				73C1A9C722EF281A00972785 /* RegisterBrandViewController.swift in Sources */,
 				73AEE50322E861BE008CA7EF /* Constants.swift in Sources */,
-				73F46790227381010017B7E9 /* SecondViewController.swift in Sources */,
 				73F467C42273890D0017B7E9 /* EntryViewController.swift in Sources */,
 				7384A758227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift in Sources */,
 				73F467D22276186F0017B7E9 /* Checkbox.swift in Sources */,
 				73F467C72275A6060017B7E9 /* RegisterInfluencerViewController.swift in Sources */,
 				73F4678C227381010017B7E9 /* AppDelegate.swift in Sources */,
+				73974CC322EF7EAC0035FDCB /* RegisterInfViewController.swift in Sources */,
 				73EC813322EB43530023D174 /* CompanyCardView.swift in Sources */,
 				73CEACC422DDF9F3004A891A /* ProfileInfluencerViewController.swift in Sources */,
+				73974C7C22EF66F70035FDCB /* LogInViewController.swift in Sources */,
 				73F4678E227381010017B7E9 /* SwipeViewController.swift in Sources */,
+				7387E30822F03E2300C2D3B1 /* PasswordForgottenViewController.swift in Sources */,
 				731B473F22EB97B70067C39C /* LikeOverlayView.swift in Sources */,
 				7384A7562279E5E20020CAF6 /* Extensions.swift in Sources */,
+				73974C8222EF70CB0035FDCB /* ChoiceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,11 +651,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73974C8322EF70CB0035FDCB /* ChoiceViewController.swift in Sources */,
 				73F467A3227381030017B7E9 /* ConnusTests.swift in Sources */,
 				73CEACC522DDF9F3004A891A /* ProfileInfluencerViewController.swift in Sources */,
 				73F467C82275A6060017B7E9 /* RegisterInfluencerViewController.swift in Sources */,
 				7384A75D227A310C0020CAF6 /* RadioButton.swift in Sources */,
+				73974CC422EF7EAC0035FDCB /* RegisterInfViewController.swift in Sources */,
+				73974C7F22EF6E0B0035FDCB /* CreateAccountViewController.swift in Sources */,
 				7384A759227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift in Sources */,
+				73C1A9CE22EF380200972785 /* SwipeViewController.swift in Sources */,
 				73F467D32276186F0017B7E9 /* Checkbox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -596,11 +668,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73974C8422EF70CB0035FDCB /* ChoiceViewController.swift in Sources */,
 				73F467AE227381030017B7E9 /* ConnusUITests.swift in Sources */,
 				73CEACC622DDF9F3004A891A /* ProfileInfluencerViewController.swift in Sources */,
 				73F467C92275A6060017B7E9 /* RegisterInfluencerViewController.swift in Sources */,
 				7384A75E227A310C0020CAF6 /* RadioButton.swift in Sources */,
+				73974CC522EF7EAC0035FDCB /* RegisterInfViewController.swift in Sources */,
+				73974C8022EF6E0B0035FDCB /* CreateAccountViewController.swift in Sources */,
 				7384A75A227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift in Sources */,
+				73C1A9CD22EF380200972785 /* SwipeViewController.swift in Sources */,
 				73F467D42276186F0017B7E9 /* Checkbox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

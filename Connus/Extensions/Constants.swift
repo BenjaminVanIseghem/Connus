@@ -31,3 +31,7 @@ let db = Firestore.firestore()
 
 //Firebase Storage
 let storage = Storage.storage()
+
+//Colors
+let whiteColor = UIColor(displayP3Red: 250, green: 250, blue: 250, alpha: 1)
+let whiteColorInvisible = UIColor(displayP3Red: 250, green: 250, blue: 250, alpha: 0)
