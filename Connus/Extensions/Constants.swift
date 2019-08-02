@@ -33,5 +33,14 @@ let db = Firestore.firestore()
 let storage = Storage.storage()
 
 //Colors
-let whiteColor = UIColor(displayP3Red: 250, green: 250, blue: 250, alpha: 1)
-let whiteColorInvisible = UIColor(displayP3Red: 250, green: 250, blue: 250, alpha: 0)
+let lightBlueColor = UIColor(hexFromString: "008FFF")
+let darkBlue = UIColor(hexFromString: "061D54", alpha: CGFloat(integerLiteral: 0))
+let whiteColorInvisible = UIColor(hexFromString: "FAFAFA", alpha: CGFloat(integerLiteral: 0))
+let whiteColor = UIColor(hexFromString: "FAFAFA", alpha: CGFloat(integerLiteral: 1))
+let lightGrayColor = UIColor(hexFromString: "B9B9B9")
+let nearlyBlackColor = UIColor(hexFromString: "171717")
+let redColor = UIColor(hexFromString: "FF1200")
+let greenColor = UIColor(hexFromString: "00FFB0")
+
+//Social media platforms
+let PLATFORMS = ["Instagram" : 0, "Facebook" : 1, "Twitter" : 2, "Youtube" : 3, "Snapchat" : 4, "Pinterest" : 5, "a" : 6, "b" : 7, "c" : 8, "d" : 9]

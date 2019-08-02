@@ -1047,7 +1047,7 @@
                                     <action selector="setProfilePictureBtnPressed:" destination="dDX-K4-Rzi" eventType="touchUpInside" id="IcQ-Lg-Om3"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jFW-7R-a20" userLabel="Big Image View">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jFW-7R-a20" userLabel="Big Image View">
                                 <rect key="frame" x="40" y="258" width="80" height="80"/>
                                 <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1060,7 +1060,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SxX-WC-xXg" userLabel="Middle Image View">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SxX-WC-xXg" userLabel="Middle Image View">
                                 <rect key="frame" x="140" y="288" width="50" height="50"/>
                                 <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1073,7 +1073,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iNN-wH-MJj" userLabel="Smal Image View">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iNN-wH-MJj" userLabel="Smal Image View">
                                 <rect key="frame" x="210" y="308" width="30" height="30"/>
                                 <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1179,6 +1179,16 @@
                                     <action selector="nextBtnPressed:" destination="dDX-K4-Rzi" eventType="touchUpInside" id="FHH-kj-l0d"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dBj-Nv-ROA">
+                                <rect key="frame" x="0.0" y="513" width="414" height="383"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.56078431370000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.023529411760000001" green="0.1137254902" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1209,9 +1219,15 @@
                     </view>
                     <connections>
                         <outlet property="bigImageView" destination="jFW-7R-a20" id="yIa-6u-5O5"/>
+                        <outlet property="infoLbl" destination="Ilk-Kd-D1f" id="upH-Ei-tO6"/>
+                        <outlet property="lightBlueView" destination="dBj-Nv-ROA" id="sAg-e1-TBq"/>
+                        <outlet property="locationStackView" destination="kgF-Pn-zGP" id="1Vp-wK-5cQ"/>
                         <outlet property="locationTxtField" destination="czH-aP-J1I" id="eGy-VY-i0J"/>
                         <outlet property="middleImageView" destination="SxX-WC-xXg" id="vfG-fv-puH"/>
+                        <outlet property="nextBtn" destination="28l-Aq-idF" id="C4R-PV-rUX"/>
                         <outlet property="profileNameTxtField" destination="7Te-tr-Ht9" id="oLV-E8-1xw"/>
+                        <outlet property="profileStackView" destination="nEm-yo-5sK" id="DB0-cc-YbD"/>
+                        <outlet property="selectProfileBtn" destination="ag4-9O-j0v" id="ggi-RX-JBE"/>
                         <outlet property="smallImageView" destination="iNN-wH-MJj" id="AKe-N5-jbx"/>
                     </connections>
                 </viewController>
@@ -1762,8 +1778,8 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jpm-nX-Aww"/>
-        <segue reference="1U3-Yl-loT"/>
+        <segue reference="Qxi-ta-Kcf"/>
+        <segue reference="IaV-pF-iej"/>
         <segue reference="1od-lu-k3y"/>
         <segue reference="brD-8O-ndz"/>
         <segue reference="pup-JJ-5qH"/>
