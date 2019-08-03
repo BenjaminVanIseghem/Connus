@@ -166,19 +166,19 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
     //Use this function in as an animation to  make these invisible in the view
     func makeBlueElementsInvisible() {
         //Label
-        self.infoLbl.alpha = CGFloat(integerLiteral: 0)
+        self.infoLbl.makeInvisible()
         
         //Images
-        self.middleImageView.alpha = CGFloat(integerLiteral: 0)
-        self.smallImageView.alpha = CGFloat(integerLiteral: 0)
+        self.middleImageView.makeInvisible()
+        self.smallImageView.makeInvisible()
         
         //Button
-        self.selectProfileBtn.alpha = CGFloat(integerLiteral: 0)
-        self.nextBtn.alpha = CGFloat(integerLiteral: 0)
+        self.selectProfileBtn.makeInvisible()
+        self.nextBtn.makeInvisible()
         
         //Stack Views
-        self.profileStackView.alpha = CGFloat(integerLiteral: 0)
-        self.locationStackView.alpha = CGFloat(integerLiteral: 0)
+        self.profileStackView.makeInvisible()
+        self.locationStackView.makeInvisible()
     }
     
     //Makes visible the UI elements of the lightBlueView
@@ -412,7 +412,7 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
         //Invisible
         secondLabel.makeInvisible()
         //Save label
-        self.infoLbl = secondLabel
+        self.genresInfoLbl = secondLabel
         //--------------------------------------------------
         //---------------- Genre buttons -------------------
         self.createGenresButtonsView()
@@ -466,9 +466,9 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
     
     func growWhiteView() {
         //positions & dimensions
-        let yPos = self.lightBlueView.frame.minY + 90
+        let yPos = (self.view.frame.height / 3) + 90
         let width = self.view.frame.width
-        let height = self.lightBlueView.frame.height - yPos
+        let height = self.view.frame.height - yPos
         
         //Create rect to use as frame
         let rect = CGRect(x: 0, y: yPos, width: width, height: height)
@@ -479,7 +479,7 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
     
     func showWhiteViewElements() {
         genresLbl?.makeVisible()
-        infoLbl.makeVisible()
+        genresInfoLbl?.makeVisible()
         finishBtn?.makeVisible()
     }
 }
