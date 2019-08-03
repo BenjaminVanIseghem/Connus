@@ -52,3 +52,13 @@ extension UIColor {
         )
     }
 }
+
+extension UIView {
+    func makeInvisible(){
+        self.alpha = CGFloat(integerLiteral: 0)
+    }
+    
+    func makeVisible(){
+        self.alpha = CGFloat(integerLiteral: 1)
+    }
+}

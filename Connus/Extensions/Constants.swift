@@ -34,7 +34,7 @@ let storage = Storage.storage()
 
 //Colors
 let lightBlueColor = UIColor(hexFromString: "008FFF")
-let darkBlue = UIColor(hexFromString: "061D54", alpha: CGFloat(integerLiteral: 0))
+let darkBlueColor = UIColor(hexFromString: "061D54", alpha: CGFloat(integerLiteral: 0))
 let whiteColorInvisible = UIColor(hexFromString: "FAFAFA", alpha: CGFloat(integerLiteral: 0))
 let whiteColor = UIColor(hexFromString: "FAFAFA", alpha: CGFloat(integerLiteral: 1))
 let lightGrayColor = UIColor(hexFromString: "B9B9B9")
