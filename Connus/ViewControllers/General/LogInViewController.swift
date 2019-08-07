@@ -14,14 +14,17 @@ class LogInViewController: UIViewController {
     //UI elements
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var passwordTxtField: UITextField!
+    @IBOutlet weak var logoImageView: UIImageView!
+    
     //View
     @IBOutlet weak var whiteView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Back button tint
         self.navigationController?.navigationBar.tintColor = whiteColor
-
-        // Do any additional setup after loading the view.
+        //Image tint
+        self.logoImageView.tintColor = whiteColor
     }
     
     @IBAction func forgottenPasswordBtnPressed(_ sender: UIButton) {

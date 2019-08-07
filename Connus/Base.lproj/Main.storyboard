@@ -347,10 +347,25 @@
             </objects>
             <point key="canvasLocation" x="-190" y="872"/>
         </scene>
-        <!--Welcome View Controller-->
+        <!--Test View Controller-->
+        <scene sceneID="EZj-Jp-siV">
+            <objects>
+                <viewController id="nPv-SR-Dlg" customClass="TestViewController" customModule="Connus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="111-Ec-lCq" customClass="TestView" customModule="Connus" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="qmV-2B-rFm"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LOE-UW-ULh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7420" y="-474"/>
+        </scene>
+        <!--WelcomeViewController-->
         <scene sceneID="JK2-2E-acB">
             <objects>
-                <viewController id="tZ8-vn-EST" customClass="WelcomeViewController" customModule="Connus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tZ8-vn-EST" userLabel="WelcomeViewController" customClass="WelcomeViewController" customModule="Connus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kRm-zq-HOo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -398,11 +413,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="top_logo" translatesAutoresizingMaskIntoConstraints="NO" id="qod-SC-e6O">
+                                <rect key="frame" x="152" y="15" width="110" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.0" green="0.56078431370000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="fsv-uR-dVI"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bHn-9A-6SN"/>
+                    <navigationItem key="navigationItem" id="2MK-j7-QHD"/>
+                    <connections>
+                        <outlet property="logoImageView" destination="qod-SC-e6O" id="Fja-Pi-9AM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9sv-mF-mHu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -417,7 +440,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="6kP-SL-tWw" userLabel="WhiteView">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="100" width="414" height="808"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORf-Ck-hyt">
                                         <rect key="frame" x="40.000000000000007" y="170" width="80.666666666666686" height="30"/>
@@ -546,18 +569,24 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="top_logo" translatesAutoresizingMaskIntoConstraints="NO" id="jzj-Zb-Qmg">
+                                <rect key="frame" x="152" y="15" width="110" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.56078431370000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="6kP-SL-tWw" secondAttribute="bottom" id="41h-Al-jOu"/>
+                            <constraint firstAttribute="bottom" secondItem="6kP-SL-tWw" secondAttribute="bottom" constant="-12" id="41h-Al-jOu"/>
                             <constraint firstItem="6kP-SL-tWw" firstAttribute="leading" secondItem="p0r-iT-RIk" secondAttribute="leading" id="Ocg-7P-Ype"/>
                             <constraint firstItem="6kP-SL-tWw" firstAttribute="trailing" secondItem="p0r-iT-RIk" secondAttribute="trailing" id="d35-w1-6XC"/>
-                            <constraint firstItem="6kP-SL-tWw" firstAttribute="top" secondItem="p0r-iT-RIk" secondAttribute="top" constant="88" id="etl-3p-5mU"/>
+                            <constraint firstItem="6kP-SL-tWw" firstAttribute="top" secondItem="p0r-iT-RIk" secondAttribute="top" constant="100" id="etl-3p-5mU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pcW-ex-fTi"/>
                     </view>
                     <connections>
                         <outlet property="emailTxtField" destination="YPw-hS-g3z" id="Zks-M1-W7Q"/>
+                        <outlet property="logoImageView" destination="jzj-Zb-Qmg" id="FMJ-rW-Cou"/>
                         <outlet property="passwordTxtField" destination="Y8C-6w-gqP" id="pp7-KY-JXr"/>
                         <outlet property="whiteView" destination="6kP-SL-tWw" id="fec-ov-kw6"/>
                         <segue destination="pVe-h1-P0n" kind="show" identifier="loginSegue" id="F6I-1F-ehP"/>
@@ -680,7 +709,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="tZ8-vn-EST" kind="relationship" relationship="rootViewController" id="Azo-zJ-dIs"/>
+                        <segue destination="tZ8-vn-EST" kind="relationship" relationship="rootViewController" id="IPV-e6-9Fg"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6M0-Ln-q1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -891,7 +920,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kHw-Vk-Z5l"/>
                     </view>
-                    <navigationItem key="navigationItem" id="E6o-Tb-Zmt"/>
                     <connections>
                         <segue destination="PLZ-tJ-yTO" kind="show" identifier="choiceSegue" id="5Yd-Tu-KAt"/>
                     </connections>
@@ -1830,6 +1858,7 @@
         <image name="first" width="30" height="30"/>
         <image name="like" width="42.666667938232422" height="42.666667938232422"/>
         <image name="second" width="30" height="30"/>
+        <image name="top_logo" width="666.66668701171875" height="666.66668701171875"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Qxi-ta-Kcf"/>

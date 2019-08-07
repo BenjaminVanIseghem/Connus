@@ -9,12 +9,16 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
+    
+    @IBOutlet weak var logoImageView: UIImageView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.view.backgroundColor = .clear
-        // Do any additional setup after loading the view
+        
+        logoImageView.tintColor = lightBlueColor
     }
 }
