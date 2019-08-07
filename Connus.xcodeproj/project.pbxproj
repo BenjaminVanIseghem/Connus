@@ -18,6 +18,7 @@
 		731B473C22EB87770067C39C /* Coco-Gothic-Regular-trial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 731B473622EB87770067C39C /* Coco-Gothic-Regular-trial.ttf */; };
 		731B473F22EB97B70067C39C /* LikeOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731B473E22EB97B70067C39C /* LikeOverlayView.swift */; };
 		731B474122EB97EA0067C39C /* LikeOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 731B474022EB97EA0067C39C /* LikeOverlayView.xib */; };
+		7365454522F755F1008A9BC6 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7365454422F755F1008A9BC6 /* WelcomeViewController.swift */; };
 		7384A7562279E5E20020CAF6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A7552279E5E20020CAF6 /* Extensions.swift */; };
 		7384A758227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A757227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift */; };
 		7384A759227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A757227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift */; };
@@ -98,6 +99,7 @@
 		731B473622EB87770067C39C /* Coco-Gothic-Regular-trial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Coco-Gothic-Regular-trial.ttf"; sourceTree = "<group>"; };
 		731B473E22EB97B70067C39C /* LikeOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeOverlayView.swift; sourceTree = "<group>"; };
 		731B474022EB97EA0067C39C /* LikeOverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeOverlayView.xib; sourceTree = "<group>"; };
+		7365454422F755F1008A9BC6 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		7384A7552279E5E20020CAF6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7384A757227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterInfluencerViewController.swift; sourceTree = "<group>"; };
 		7384A75B227A310C0020CAF6 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				73974C7D22EF6E0B0035FDCB /* CreateAccountViewController.swift */,
 				73974C8122EF70CB0035FDCB /* ChoiceViewController.swift */,
 				7387E30722F03E2300C2D3B1 /* PasswordForgottenViewController.swift */,
+				7365454422F755F1008A9BC6 /* WelcomeViewController.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -644,6 +647,7 @@
 				731B473F22EB97B70067C39C /* LikeOverlayView.swift in Sources */,
 				7384A7562279E5E20020CAF6 /* Extensions.swift in Sources */,
 				73974C8222EF70CB0035FDCB /* ChoiceViewController.swift in Sources */,
+				7365454522F755F1008A9BC6 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

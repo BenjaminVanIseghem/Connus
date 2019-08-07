@@ -11,12 +11,15 @@ import Firebase
 
 class LogInViewController: UIViewController {
     
+    //UI elements
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var passwordTxtField: UITextField!
+    //View
+    @IBOutlet weak var whiteView: UIView!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.tintColor = whiteColor
 
         // Do any additional setup after loading the view.
     }

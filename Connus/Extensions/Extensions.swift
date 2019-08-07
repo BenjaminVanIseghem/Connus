@@ -62,3 +62,42 @@ extension UIView {
         self.alpha = CGFloat(integerLiteral: 1)
     }
 }
+
+extension UIImage {
+    
+    //
+    /// Tint Image
+    ///
+    /// - Parameter fillColor: UIColor
+    /// - Returns: Image with tint color
+    func withTint(with fillColor: UIColor) -> UIImage? {
+        let image = withRenderingMode(.alwaysTemplate)
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        fillColor.set()
+        image.draw(in: CGRect(origin: .zero, size: size))
+        
+        guard let imageColored = UIGraphicsGetImageFromCurrentImageContext() else {
+            return nil
+        }
+        
+        UIGraphicsEndImageContext()
+        return imageColored
+    }
+}
+
+extension UIButton {
+    func toggle() {
+        if self.isSelected {
+            self.isSelected = false
+        } else {
+            self.isSelected = true
+        }
+    }
+}
+
+extension UINavigationBar {
+    
+    func hideShadow(_ value: Bool = true) {
+        setValue(value, forKey: "hidesShadow")
+    }
+}

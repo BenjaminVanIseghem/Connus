@@ -12,7 +12,8 @@ class CreateAccountViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.navigationBar.barTintColor = whiteColor
+        self.navigationController?.navigationBar.hideShadow()
         // Do any additional setup after loading the view.
     }
     

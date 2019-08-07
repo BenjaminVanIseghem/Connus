@@ -42,9 +42,17 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
     var genresButtons : [UIButton] = []
     var genresButtonsView : UIView?
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.hideShadow()
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Set navigation bar color
+        self.navigationController?.navigationBar.barTintColor = darkBlueColor
 
         profileNameLbl = self.createProfileLbl()
         nameAndLocationLbl = self.createNameAndLocationLabel()
@@ -228,7 +236,7 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
     func createGenresButtonsView() {
         //Dimensions & positions
         let xPos = 40
-        let yPos = Int(self.genresLbl!.frame.maxY) + 20
+        let yPos = Int(self.genresInfoLbl!.frame.maxY) + 20
         let width = Int(self.whiteView.frame.width) - 80
         let height = 160
 
@@ -356,17 +364,27 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
             
             //Color
             button.backgroundColor = whiteColor
+            button.tintColor = .clear
             //CornerRadius
             button.layer.cornerRadius = 10
             //Get image from platformname
             let image = UIImage(named: platform)
+            let unselectedImage = image?.withTint(with: lightBlueColor)
+            let selectedImage = image?.withTint(with: darkBlueColor)
             //Set image as background image for button
-            button.setImage(image, for: .normal)
+            button.setBackgroundImage(unselectedImage, for: .normal)
+            button.setBackgroundImage(selectedImage, for: .selected)
+            //Set action
+            button.addTarget(self, action: #selector(platformBtnTapped), for: UIControl.Event.touchUpInside)
             //Append to array
             platformButtons.append(button)
             //Add to view
             self.platformButtonsView!.addSubview(button)
         }
+    }
+    
+    @objc func platformBtnTapped(sender: UIButton) {
+        sender.toggle()
     }
 //---------------------------------------------------------
 //----------------- Create elements for white view --------
@@ -421,8 +439,10 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
         //---------------- Button --------------------------
         //Button
         let button = UIButton(type: .system)
+        //Calc yPos
+        let whiteViewHeight = self.view.frame.height - ((self.view.frame.height / 3) + 90)
         //Make rect for frame
-        let btnRect = CGRect(x: viewFrame.width - 120, y: label.frame.maxY + 160, width: 80, height: 30)
+        let btnRect = CGRect(x: viewFrame.width - 120, y: whiteViewHeight - 150, width: 80, height: 30)
         //Set button frame
         button.frame = btnRect
         //Color
@@ -449,12 +469,69 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
         self.whiteView.addSubview(button)
     }
     
+    //FINAL BUTTON, save everything to firebase
     @objc func finishBtnPressed() {
         //TODO
     }
     
     func fillGenresButtonView() {
-        //TODO
+        //Frame
+        let viewFrame = self.genresButtonsView!.frame
+        //Dimensions for each button
+        let width = 60
+        let height = 30
+        let spaceBetweenButtons = 10
+        //Check how many can be shown in 1 row
+        let amountPerRowFloat = viewFrame.width / CGFloat(integerLiteral: width + spaceBetweenButtons)
+        //Round amountPerRowFloat
+        let roundedAmountPerRowFloat = amountPerRowFloat.rounded()
+        //Convert to integer (easier to work with)
+        let amountPerRow = Int(roundedAmountPerRowFloat)
+        for (genre, index) in GENRES {
+            //Init button as system button for click animations
+            let button = UIButton(type: .system)
+            
+            if amountPerRow > index {
+                //Positions
+                let xPos = index * (width + spaceBetweenButtons)
+                let yPos = 0
+                //Init rect
+                let rect = CGRect(x: xPos, y: yPos, width: width, height: height)
+                //Set rect as frame for button
+                button.frame = rect
+            } else {
+                let calculatedValue = index - amountPerRow
+                //Positions
+                let xPos = calculatedValue * (width + spaceBetweenButtons)
+                let yPos = height + spaceBetweenButtons
+                //Init rect
+                let rect = CGRect(x: xPos, y: yPos, width: width, height: height)
+                //Set rect as frame for button
+                button.frame = rect
+            }
+            
+            //Color
+            button.backgroundColor = lightBlueColor
+            button.setTitleColor(whiteColor, for: .normal)
+            button.setTitleColor(greenColor, for: .selected)
+            button.tintColor = .clear
+            //CornerRadius
+            button.layer.cornerRadius = CGFloat(integerLiteral: height / 2)
+            //Font
+            button.titleLabel?.font = UIFont(name: "CocoGothic-Bold", size: 14)
+            //Title
+            button.setTitle(genre, for: .normal)
+            //Set action
+            button.addTarget(self, action: #selector(genreBtnTapped), for: UIControl.Event.touchUpInside)
+            //Append to array
+            genresButtons.append(button)
+            //Add to view
+            self.genresButtonsView!.addSubview(button)
+        }
+    }
+    
+    @objc func genreBtnTapped(sender: UIButton) {
+        sender.toggle()
     }
 //---------------------------------------------------------
     
@@ -480,6 +557,7 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
     func showWhiteViewElements() {
         genresLbl?.makeVisible()
         genresInfoLbl?.makeVisible()
+        genresButtonsView?.makeVisible()
         finishBtn?.makeVisible()
     }
 }
