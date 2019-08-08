@@ -7,17 +7,22 @@
 //
 
 import UIKit
+import Firebase
 
 class CreateAccountViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.barTintColor = whiteColor
-        self.navigationController?.navigationBar.hideShadow()
-        // Do any additional setup after loading the view.
+        
+        //Set battery and wifi icons to black
+        navigationController?.navigationBar.barStyle = .black
+        //Back button tint
+        self.navigationController?.navigationBar.tintColor = whiteColor
     }
     
     @IBAction func createAccount(_ sender: UIButton) {
+        
+        
         self.performSegue(withIdentifier: "choiceSegue", sender: self)
     }
     

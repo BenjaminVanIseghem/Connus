@@ -14,7 +14,6 @@ class LogInViewController: UIViewController {
     //UI elements
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var passwordTxtField: UITextField!
-    @IBOutlet weak var logoImageView: UIImageView!
     
     //View
     @IBOutlet weak var whiteView: UIView!
@@ -23,8 +22,8 @@ class LogInViewController: UIViewController {
         super.viewDidLoad()
         //Back button tint
         self.navigationController?.navigationBar.tintColor = whiteColor
-        //Image tint
-        self.logoImageView.tintColor = whiteColor
+        //Set battery and other top icons to white
+        navigationController?.navigationBar.barStyle = .black
     }
     
     @IBAction func forgottenPasswordBtnPressed(_ sender: UIButton) {
@@ -34,27 +33,75 @@ class LogInViewController: UIViewController {
     @IBAction func signInButtonPressed(_ sender: UIButton) {
         //TODO Sign in using credentials
         //Fetch values from textfields
-        guard let email = emailTxtField.text else {
-            print("No email")
+        guard let email = emailTxtField.text, email != "" else {
+            notFilledInWarning()
             return
         }
-        guard let password = passwordTxtField.text else {
-            print("No password")
+        guard let password = passwordTxtField.text, password != "" else {
+            notFilledInWarning()
             return
         }
         
         Auth.auth().signIn(withEmail: email, password: password) {(result, error) in
-            guard error != nil else {
-                print("Error signing in user")
+            guard error == nil else {
+                self.wrongLoginInfoWarning()
+                print("Error signing in user", error as Any)
                 return
             }
             print("User succesfully signed in!")
             
-            //Segue to influencer flow
-            self.performSegue(withIdentifier: "loginSegue", sender: self)
+            let uid = result?.user.uid
+            db.collection(INFLUENCERPATH).document(uid!).getDocument() {result, error in 
+                if error != nil {
+                    print(error!)
+                    return
+                }
+                if result!.exists {
+                    print("INFLUENCER SIGNED IN")
+                    //Segue to influencer flow
+                    self.performSegue(withIdentifier: "signedInfluencerSegue", sender: self)
+                } else {
+                    print("NOT AN INFLUENCER")
+                }
+                
+            }
+            db.collection(COMPANIESPATH).document(uid!).getDocument() {result, error in
+                if error != nil {
+                    print(error!)
+                    return
+                }
+                if result!.exists {
+                    print("BRAND SIGNED IN")
+                    //Segue to influencer flow
+                    self.performSegue(withIdentifier: "signedBrandSegue", sender: self)
+                } else {
+                    print("NOT A BRAND")
+                }
+            }
+            
+            
         }
     }
     
+    //Warning alert when not everything is filled in
+    func notFilledInWarning() {
+        let alertController = UIAlertController(title: "Oops!", message:
+            "It seems you didn't fill in all the fields", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    //Warning alert when the login info is wrong
+    func wrongLoginInfoWarning() {
+        let alertController = UIAlertController(title: "Oops!", message:
+            "You have entered an invalid email or password", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    //Preparation for the segue to the PasswordForgottenViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "passwordForgottenSegue" {
             guard let email = emailTxtField.text else {

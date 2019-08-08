@@ -24,7 +24,6 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
     @IBOutlet weak var lightBlueView: UIView!
     @IBOutlet weak var whiteView: UIView!
     
-    
     //Labels
     var profileNameLbl : UILabel?
     var nameAndLocationLbl : UILabel?
@@ -54,10 +53,15 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
         //Set navigation bar color
         self.navigationController?.navigationBar.barTintColor = darkBlueColor
 
+        //Create extra labels
         profileNameLbl = self.createProfileLbl()
         nameAndLocationLbl = self.createNameAndLocationLabel()
+        //create invisible elements to show on swipe or next button press
         createElementsForLightBlueView()
         createElementsForWhiteView()
+        
+        //Add gesture recognizers
+        addSwipeGestureRecognizers()
     }
     
     @IBAction func setProfilePictureBtnPressed(_ sender: UIButton) {
@@ -559,5 +563,39 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
         genresInfoLbl?.makeVisible()
         genresButtonsView?.makeVisible()
         finishBtn?.makeVisible()
+    }
+    
+    func addSwipeGestureRecognizers(){
+        let up = UISwipeGestureRecognizer(target: self, action: #selector(lightBlueUpSwipe))
+        up.direction = .up
+        self.lightBlueView.addGestureRecognizer(up)
+        
+        let down = UISwipeGestureRecognizer(target: self, action: #selector(lightBlueDownSwipe))
+        down.direction = .down
+        self.lightBlueView.addGestureRecognizer(down)
+        
+        let whiteUp = UISwipeGestureRecognizer(target: self, action: #selector(whiteUpSwipe))
+        whiteUp.direction = .up
+        self.whiteView.addGestureRecognizer(whiteUp)
+        
+        let whiteDown = UISwipeGestureRecognizer(target: self, action: #selector(whiteDownSwipe))
+        whiteDown.direction = .down
+        self.whiteView.addGestureRecognizer(whiteDown)
+    }
+    
+    @objc func lightBlueUpSwipe() {
+        print("Swiped UP")
+    }
+    
+    @objc func lightBlueDownSwipe() {
+        print("Swiped DOWN")
+    }
+    
+    @objc func whiteUpSwipe() {
+        print("Swiped W UP")
+    }
+    
+    @objc func whiteDownSwipe() {
+        print("Swiped W DOWN")
     }
 }

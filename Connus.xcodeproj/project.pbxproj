@@ -18,6 +18,7 @@
 		731B473C22EB87770067C39C /* Coco-Gothic-Regular-trial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 731B473622EB87770067C39C /* Coco-Gothic-Regular-trial.ttf */; };
 		731B473F22EB97B70067C39C /* LikeOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731B473E22EB97B70067C39C /* LikeOverlayView.swift */; };
 		731B474122EB97EA0067C39C /* LikeOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 731B474022EB97EA0067C39C /* LikeOverlayView.xib */; };
+		731D7EA522FB0BF3000DF6AC /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D7EA422FB0BF3000DF6AC /* TempViewController.swift */; };
 		7365454522F755F1008A9BC6 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7365454422F755F1008A9BC6 /* WelcomeViewController.swift */; };
 		7384A7562279E5E20020CAF6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A7552279E5E20020CAF6 /* Extensions.swift */; };
 		7384A758227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A757227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift */; };
@@ -38,9 +39,6 @@
 		73974CC422EF7EAC0035FDCB /* RegisterInfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73974CC222EF7EAC0035FDCB /* RegisterInfViewController.swift */; };
 		73974CC522EF7EAC0035FDCB /* RegisterInfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73974CC222EF7EAC0035FDCB /* RegisterInfViewController.swift */; };
 		73AEE50322E861BE008CA7EF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AEE50222E861BE008CA7EF /* Constants.swift */; };
-		73B513B622FAD664005F94F0 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B513B522FAD664005F94F0 /* TestView.swift */; };
-		73B513B822FAD67C005F94F0 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73B513B722FAD67C005F94F0 /* TestView.xib */; };
-		73B513BA22FAD89C005F94F0 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B513B922FAD89C005F94F0 /* TestViewController.swift */; };
 		73B513BD22FAE8BD005F94F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73B513BC22FAE8BD005F94F0 /* GoogleService-Info.plist */; };
 		73C1A9C722EF281A00972785 /* RegisterBrandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C1A9C622EF281A00972785 /* RegisterBrandViewController.swift */; };
 		73C1A9CD22EF380200972785 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F4678D227381010017B7E9 /* SwipeViewController.swift */; };
@@ -100,6 +98,7 @@
 		731B473622EB87770067C39C /* Coco-Gothic-Regular-trial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Coco-Gothic-Regular-trial.ttf"; sourceTree = "<group>"; };
 		731B473E22EB97B70067C39C /* LikeOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeOverlayView.swift; sourceTree = "<group>"; };
 		731B474022EB97EA0067C39C /* LikeOverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeOverlayView.xib; sourceTree = "<group>"; };
+		731D7EA422FB0BF3000DF6AC /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
 		7365454422F755F1008A9BC6 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		7384A7552279E5E20020CAF6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7384A757227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterInfluencerViewController.swift; sourceTree = "<group>"; };
@@ -110,9 +109,6 @@
 		73974C8122EF70CB0035FDCB /* ChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceViewController.swift; sourceTree = "<group>"; };
 		73974CC222EF7EAC0035FDCB /* RegisterInfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInfViewController.swift; sourceTree = "<group>"; };
 		73AEE50222E861BE008CA7EF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		73B513B522FAD664005F94F0 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
-		73B513B722FAD67C005F94F0 /* TestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
-		73B513B922FAD89C005F94F0 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		73B513BC22FAE8BD005F94F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		73C1A9C622EF281A00972785 /* RegisterBrandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBrandViewController.swift; sourceTree = "<group>"; };
 		73CEACC322DDF9F3004A891A /* ProfileInfluencerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfluencerViewController.swift; sourceTree = "<group>"; };
@@ -254,7 +250,7 @@
 				73974C8122EF70CB0035FDCB /* ChoiceViewController.swift */,
 				7387E30722F03E2300C2D3B1 /* PasswordForgottenViewController.swift */,
 				7365454422F755F1008A9BC6 /* WelcomeViewController.swift */,
-				73B513B922FAD89C005F94F0 /* TestViewController.swift */,
+				731D7EA422FB0BF3000DF6AC /* TempViewController.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -337,8 +333,6 @@
 				731B472F22EB82B40067C39C /* CompanyCardView.xib */,
 				731B473E22EB97B70067C39C /* LikeOverlayView.swift */,
 				731B474022EB97EA0067C39C /* LikeOverlayView.xib */,
-				73B513B522FAD664005F94F0 /* TestView.swift */,
-				73B513B722FAD67C005F94F0 /* TestView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -466,7 +460,6 @@
 				731B473822EB87770067C39C /* Coco-Gothic-Bold-Italic-trial.ttf in Resources */,
 				73CEACC822DF4DA5004A891A /* Assets.xcassets in Resources */,
 				731B473B22EB87770067C39C /* Coco-Gothic-Light-Italic-trial.ttf in Resources */,
-				73B513B822FAD67C005F94F0 /* TestView.xib in Resources */,
 				731B473922EB87770067C39C /* Coco-Gothic-Bold-trial.ttf in Resources */,
 				731B474122EB97EA0067C39C /* LikeOverlayView.xib in Resources */,
 				731B473A22EB87770067C39C /* Coco-Gothic-Light-trial.ttf in Resources */,
@@ -642,7 +635,6 @@
 				73F467C42273890D0017B7E9 /* EntryViewController.swift in Sources */,
 				7384A758227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift in Sources */,
 				73F467D22276186F0017B7E9 /* Checkbox.swift in Sources */,
-				73B513BA22FAD89C005F94F0 /* TestViewController.swift in Sources */,
 				73F467C72275A6060017B7E9 /* RegisterInfluencerViewController.swift in Sources */,
 				73F4678C227381010017B7E9 /* AppDelegate.swift in Sources */,
 				73974CC322EF7EAC0035FDCB /* RegisterInfViewController.swift in Sources */,
@@ -652,7 +644,7 @@
 				73F4678E227381010017B7E9 /* SwipeViewController.swift in Sources */,
 				7387E30822F03E2300C2D3B1 /* PasswordForgottenViewController.swift in Sources */,
 				731B473F22EB97B70067C39C /* LikeOverlayView.swift in Sources */,
-				73B513B622FAD664005F94F0 /* TestView.swift in Sources */,
+				731D7EA522FB0BF3000DF6AC /* TempViewController.swift in Sources */,
 				7384A7562279E5E20020CAF6 /* Extensions.swift in Sources */,
 				73974C8222EF70CB0035FDCB /* ChoiceViewController.swift in Sources */,
 				7365454522F755F1008A9BC6 /* WelcomeViewController.swift in Sources */,

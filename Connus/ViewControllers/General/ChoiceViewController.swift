@@ -13,7 +13,8 @@ class ChoiceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //Back button tint
+        self.navigationController?.navigationBar.tintColor = whiteColor
     }
     
     @IBAction func influencerBtnPressed(_ sender: UIButton) {
