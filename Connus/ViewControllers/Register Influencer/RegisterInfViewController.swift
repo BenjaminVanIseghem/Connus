@@ -40,6 +40,7 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
     var platformButtonsView : UIView?
     var genresButtons : [UIButton] = []
     var genresButtonsView : UIView?
+    var currentActiveView : String?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -58,7 +59,10 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
         nameAndLocationLbl = self.createNameAndLocationLabel()
         //create invisible elements to show on swipe or next button press
         createElementsForLightBlueView()
+        whiteView.isUserInteractionEnabled = true
         createElementsForWhiteView()
+        //Set current active view
+        self.currentActiveView = "darkBlueView"
         
         //Add gesture recognizers
         addSwipeGestureRecognizers()
@@ -89,20 +93,7 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
     }
     
     @IBAction func nextBtnPressed(_ sender: UIButton) {
-        let size = self.bigImageView.frame.size
-        let newY = 150 + size.height / 2
-        let newX = 40 + size.width / 2
-            
-        UIView.animate(withDuration: 0.5, animations: {
-            self.bigImageView.center = CGPoint(x: newX, y: newY)
-            self.createProfileNameAndLocationLabels()
-            self.makeBlueElementsInvisible()
-            self.transformLightBlueView()
-        }) { completed in
-            UIView.animate(withDuration: 0.5, animations: {
-                self.showLightBlueViewElements()
-            })
-        }
+        self.animateToSecondView()
     }
 
 //----------------------- View elements ------------------------------
@@ -110,52 +101,48 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
     func createProfileLbl() -> UILabel {
         //Init label
         let label = UILabel(frame: CGRect(x: 135, y: 258, width: 240, height: 30))
-        
         // font
         label.font = UIFont.preferredFont(forTextStyle: .headline)
         label.font = UIFont.init(name: "CocoGothic-Bold", size: 23)
-        
         // color
-        label.textColor = whiteColorInvisible
-        
+        label.textColor = whiteColor
         //Alignment
         label.textAlignment = .left
-        
         //Text
         label.text = "Profile Name"
-        
+        //Invisible
+        label.makeInvisible()
+        //Add to view
         self.view.addSubview(label)
         
         return label
     }
     
+    //Create the name and location label
     func createNameAndLocationLabel() -> UILabel {
         //Init label
         let label = UILabel(frame: CGRect(x: 135, y: 296, width: 240, height: 40))
-        
         // font
         label.font = UIFont.preferredFont(forTextStyle: .footnote)
         label.font = UIFont.init(name: "CocoGothic", size: 14)
-        
         // color
-        label.textColor = whiteColorInvisible
-        
+        label.textColor = .lightGray
         //Alignment
         label.textAlignment = .left
-        
         label.lineBreakMode = NSLineBreakMode.byWordWrapping
         label.numberOfLines = 0
-        
         //Text
         label.text = "name, location"
-        
+        //Invisible
+        label.makeInvisible()
+        //Add to view
         self.view.addSubview(label)
         
         return label
     }
 //-------------------------------------------------------------
 //-------------------------- Animations -----------------------
-    func createProfileNameAndLocationLabels() {
+    func moveProfileNameAndLocationLabelsToTop() {
         //Set value from profile text field as text for label
         var profName = self.profileNameTxtField.text
         if profName == "" {
@@ -166,17 +153,45 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
         //Set name and location as text for label
         // --> get name and location from previous screens  TODO!!!!
         
-        //Set new color
-        profileNameLbl!.textColor = whiteColor
-        nameAndLocationLbl?.textColor = .lightGray
-        
         //Set center position
         profileNameLbl!.center = CGPoint(x: 255, y: 165)
         nameAndLocationLbl?.center = CGPoint(x: 255, y: 200)
+        
+        //Make visible
+        profileNameLbl?.makeVisible()
+        nameAndLocationLbl?.makeVisible()
+    }
+    
+    func moveProfileNameAndLocationLabelBack() {
+        //Set center position
+        profileNameLbl!.center = CGPoint(x: 255, y: 258)
+        nameAndLocationLbl?.center = CGPoint(x: 255, y: 296)
+        //Make invisible
+        profileNameLbl?.makeInvisible()
+        nameAndLocationLbl?.makeInvisible()
+    }
+    
+    //Move bigImageView back and forth (1 = first position, 2 = second position)
+    func moveBigImageView(position : Int) {
+        let size = self.bigImageView.frame.size
+        switch position {
+        case 1:
+            let newY = 258 + size.height / 2
+            let newX = 40 + size.width / 2
+            
+            self.bigImageView.center = CGPoint(x: newX, y: newY)
+        case 2:
+            let newY = 150 + size.height / 2
+            let newX = 40 + size.width / 2
+            
+            self.bigImageView.center = CGPoint(x: newX, y: newY)
+        default:
+            print("Not a correct value!")
+        }
     }
     
     //Use this function in as an animation to  make these invisible in the view
-    func makeBlueElementsInvisible() {
+    func hideDarkBlueViewElements() {
         //Label
         self.infoLbl.makeInvisible()
         
@@ -193,17 +208,65 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
         self.locationStackView.makeInvisible()
     }
     
-    //Makes visible the UI elements of the lightBlueView
+    func showDarkBlueViewElements() {
+        //Label
+        self.infoLbl.makeVisible()
+        
+        //Images
+        self.middleImageView.makeVisible()
+        self.smallImageView.makeVisible()
+        
+        //Button
+        self.selectProfileBtn.makeVisible()
+        self.nextBtn.makeVisible()
+        
+        //Stack Views
+        self.profileStackView.makeVisible()
+        self.locationStackView.makeVisible()
+    }
+    
+    //Grow the lightBlueView
+    func growLightBlueView() {
+        //positions & dimensions
+        let yPos = self.view.frame.height / 3
+        let width = self.view.frame.width
+        let height = self.view.frame.height - yPos
+        //Create rect to use as frame
+        let rect = CGRect(x: 0, y: yPos, width: width, height: height)
+        //Set view frame
+        self.lightBlueView.frame = rect
+    }
+    
+    //Shrink the lightBlueview
+    func shrinkLightBlueView() {
+        //positions & dimensions
+        let yPos = self.view.frame.height - 250
+        let width = self.view.frame.width
+        let height = self.view.frame.height - yPos
+        //Create rect to use as frame
+        let rect = CGRect(x: 0, y: yPos, width: width, height: height)
+        //Set view frame
+        self.lightBlueView.frame = rect
+    }
+    
+    //Hide UI Elements
+    func hideLightBlueViewElements() {
+        platformsLbl?.makeInvisible()
+        platformButtonsView?.makeInvisible()
+        whiteNextBtn?.makeInvisible()
+    }
+    
+    //Show UI elements
     func showLightBlueViewElements() {
         self.platformsLbl?.makeVisible()
         self.whiteNextBtn?.makeVisible()
         self.platformButtonsView?.makeVisible()
     }
     
-    //Show the elements in the light blue view
-    func transformLightBlueView() {
+    //Grow view
+    func growWhiteView() {
         //positions & dimensions
-        let yPos = self.view.frame.height / 3
+        let yPos = (self.view.frame.height / 3) + 90
         let width = self.view.frame.width
         let height = self.view.frame.height - yPos
         
@@ -211,7 +274,35 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
         let rect = CGRect(x: 0, y: yPos, width: width, height: height)
         
         //Set view frame
-        self.lightBlueView.frame = rect
+        self.whiteView.frame = rect
+    }
+    
+    //Shrink view
+    func shrinkWhiteView() {
+        //Position and dimensions
+        let yPos = self.view.frame.height - 150
+        let width = self.view.frame.width
+        let height = self.view.frame.height - yPos
+        //Rect
+        let rect = CGRect(x: 0, y: yPos, width: width, height: height)
+        //Set as frame
+        self.whiteView.frame = rect
+    }
+    
+    //Show UI Elements
+    func showWhiteViewElements() {
+        genresLbl?.makeVisible()
+        genresInfoLbl?.makeVisible()
+        genresButtonsView?.makeVisible()
+        finishBtn?.makeVisible()
+    }
+    
+    //Hide UI Elements
+    func hideWhiteViewElements() {
+        genresLbl?.makeInvisible()
+        genresInfoLbl?.makeInvisible()
+        genresButtonsView?.makeInvisible()
+        finishBtn?.makeInvisible()
     }
 //--------------------------------------------------
 //---------------- Create Views --------------------
@@ -319,14 +410,7 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
     
     //Objective C function, action for button press (nextBtn)
     @objc func whiteNextBtnPressed(sender : UIButton) {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.hideLightBlueViewElements()
-            self.growWhiteView()
-        }) { completed in
-            UIView.animate(withDuration: 0.5, animations: {
-                self.showWhiteViewElements()
-            })
-        }
+        self.animateToThirdView()
     }
     
     //Creates the buttons which represent all the social media platforms
@@ -539,32 +623,6 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
     }
 //---------------------------------------------------------
     
-    func hideLightBlueViewElements() {
-        platformsLbl?.makeInvisible()
-        platformButtonsView?.makeInvisible()
-        whiteNextBtn?.makeInvisible()
-    }
-    
-    func growWhiteView() {
-        //positions & dimensions
-        let yPos = (self.view.frame.height / 3) + 90
-        let width = self.view.frame.width
-        let height = self.view.frame.height - yPos
-        
-        //Create rect to use as frame
-        let rect = CGRect(x: 0, y: yPos, width: width, height: height)
-        
-        //Set view frame
-        self.whiteView.frame = rect
-    }
-    
-    func showWhiteViewElements() {
-        genresLbl?.makeVisible()
-        genresInfoLbl?.makeVisible()
-        genresButtonsView?.makeVisible()
-        finishBtn?.makeVisible()
-    }
-    
     func addSwipeGestureRecognizers(){
         let up = UISwipeGestureRecognizer(target: self, action: #selector(lightBlueUpSwipe))
         up.direction = .up
@@ -584,18 +642,81 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
     }
     
     @objc func lightBlueUpSwipe() {
-        print("Swiped UP")
+        if currentActiveView == "darkBlueView" {
+            self.animateToSecondView()
+        }
     }
     
     @objc func lightBlueDownSwipe() {
-        print("Swiped DOWN")
+        if currentActiveView == "lightBlueView" {
+            self.animateToFirstView()
+        }
     }
     
     @objc func whiteUpSwipe() {
-        print("Swiped W UP")
+        if currentActiveView == "lightBlueView" {
+            self.animateToThirdView()
+        }
     }
     
     @objc func whiteDownSwipe() {
-        print("Swiped W DOWN")
+        if currentActiveView == "whiteView" {
+            self.animateToSecondViewFromThirdView()
+        }
+    }
+    
+    //Do all the animations to get back to the first view
+    func animateToFirstView() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.hideLightBlueViewElements()
+            self.shrinkLightBlueView()
+            self.moveBigImageView(position: 1)
+            self.moveProfileNameAndLocationLabelBack()
+        }) { completed in
+            UIView.animate(withDuration: 0.5, animations: {
+                self.showDarkBlueViewElements()
+            })
+        }
+        self.currentActiveView = "darkBlueView"
+    }
+    //Do all the animations to get to the second view
+    func animateToSecondView() {
+        UIView.animate(withDuration: 0.5, animations: {
+            //Move big image view to the second position
+            self.moveBigImageView(position: 2)
+            self.moveProfileNameAndLocationLabelsToTop()
+            self.hideDarkBlueViewElements()
+            self.growLightBlueView()
+        }) { completed in
+            UIView.animate(withDuration: 0.5, animations: {
+                self.showLightBlueViewElements()
+            })
+        }
+        self.currentActiveView = "lightBlueView"
+    }
+    //Do all the animations to get back to the second view
+    func animateToSecondViewFromThirdView() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.hideWhiteViewElements()
+            self.shrinkWhiteView()
+            self.growLightBlueView()
+        }) { completed in
+            UIView.animate(withDuration: 0.5, animations: {
+                self.showLightBlueViewElements()
+            })
+        }
+        self.currentActiveView = "lightBlueView"
+    }
+    //Do all the animations to get to the third view
+    func animateToThirdView() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.hideLightBlueViewElements()
+            self.growWhiteView()
+        }) { completed in
+            UIView.animate(withDuration: 0.5, animations: {
+                self.showWhiteViewElements()
+            })
+        }
+        self.currentActiveView = "whiteView"
     }
 }

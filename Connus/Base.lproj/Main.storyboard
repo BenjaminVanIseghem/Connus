@@ -1261,7 +1261,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dBj-Nv-ROA">
-                                <rect key="frame" x="0.0" y="513" width="414" height="383"/>
+                                <rect key="frame" x="0.0" y="646" width="414" height="250"/>
                                 <color key="backgroundColor" red="0.0" green="0.56078431370000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <userDefinedRuntimeAttributes>
@@ -1270,8 +1270,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Hp1-RO-MAD" userLabel="White View">
-                                <rect key="frame" x="0.0" y="737" width="414" height="159"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hp1-RO-MAD" userLabel="White View">
+                                <rect key="frame" x="0.0" y="746" width="414" height="150"/>
                                 <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1327,12 +1327,12 @@
                             <constraint firstItem="nEm-yo-5sK" firstAttribute="leading" secondItem="MnV-x9-ngk" secondAttribute="leading" constant="40" id="MfC-A3-P80"/>
                             <constraint firstItem="dBj-Nv-ROA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="MnV-x9-ngk" secondAttribute="top" constant="425" id="NiU-bu-DrC"/>
                             <constraint firstItem="dBj-Nv-ROA" firstAttribute="trailing" secondItem="MnV-x9-ngk" secondAttribute="trailing" id="Pnw-C6-zfd"/>
-                            <constraint firstItem="Hp1-RO-MAD" firstAttribute="top" secondItem="MnV-x9-ngk" secondAttribute="top" constant="649" id="Q3H-Ym-dQS"/>
+                            <constraint firstItem="Hp1-RO-MAD" firstAttribute="top" secondItem="MnV-x9-ngk" secondAttribute="top" constant="658" id="Q3H-Ym-dQS"/>
                             <constraint firstItem="Hp1-RO-MAD" firstAttribute="leading" secondItem="xAP-3J-ncg" secondAttribute="leading" id="WKv-LL-UN4"/>
                             <constraint firstItem="MnV-x9-ngk" firstAttribute="trailing" secondItem="28l-Aq-idF" secondAttribute="trailing" constant="40" id="Yau-UN-3VC"/>
                             <constraint firstItem="MnV-x9-ngk" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ag4-9O-j0v" secondAttribute="trailing" symbolic="YES" id="Yyh-91-YWZ"/>
                             <constraint firstItem="SxX-WC-xXg" firstAttribute="leading" secondItem="jFW-7R-a20" secondAttribute="trailing" constant="20" id="ZOd-9q-ayW"/>
-                            <constraint firstItem="dBj-Nv-ROA" firstAttribute="top" secondItem="28l-Aq-idF" secondAttribute="bottom" constant="25" id="ba4-gV-1cv"/>
+                            <constraint firstItem="dBj-Nv-ROA" firstAttribute="top" secondItem="28l-Aq-idF" secondAttribute="bottom" constant="158" id="ba4-gV-1cv"/>
                             <constraint firstItem="nEm-yo-5sK" firstAttribute="top" secondItem="SxX-WC-xXg" secondAttribute="bottom" constant="20" id="cGd-gI-0Vn"/>
                             <constraint firstItem="jFW-7R-a20" firstAttribute="leading" secondItem="MnV-x9-ngk" secondAttribute="leading" constant="40" id="ebQ-5A-ENM"/>
                             <constraint firstItem="MnV-x9-ngk" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Uuf-Rz-mzO" secondAttribute="trailing" constant="158" id="gS4-t4-eag"/>
