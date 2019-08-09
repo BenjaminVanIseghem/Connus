@@ -10,7 +10,9 @@ import UIKit
 import Firebase
 
 class CreateAccountViewController: UIViewController {
-
+    
+    @IBOutlet weak var whiteView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,6 +20,8 @@ class CreateAccountViewController: UIViewController {
         navigationController?.navigationBar.barStyle = .black
         //Back button tint
         self.navigationController?.navigationBar.tintColor = whiteColor
+        //Round the whiteview top corners
+        self.whiteView.roundTopCorners()
     }
     
     @IBAction func createAccount(_ sender: UIButton) {

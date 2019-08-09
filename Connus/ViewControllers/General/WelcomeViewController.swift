@@ -11,6 +11,7 @@ import UIKit
 class WelcomeViewController: UIViewController {
     
     @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var createAccountBtn: UIButton!
     
 
     override func viewDidLoad() {
@@ -21,6 +22,8 @@ class WelcomeViewController: UIViewController {
         self.navigationController?.view.backgroundColor = .clear
         //Set color of the logo  image
         logoImageView.tintColor = lightBlueColor
+        //Set button properties
+        self.createAccountBtn.setRounded()
         
     }
     

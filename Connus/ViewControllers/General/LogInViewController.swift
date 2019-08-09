@@ -24,6 +24,8 @@ class LogInViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = whiteColor
         //Set battery and other top icons to white
         navigationController?.navigationBar.barStyle = .black
+        //Set rounded top corners for whiteView
+        whiteView.roundTopCorners()
     }
     
     @IBAction func forgottenPasswordBtnPressed(_ sender: UIButton) {

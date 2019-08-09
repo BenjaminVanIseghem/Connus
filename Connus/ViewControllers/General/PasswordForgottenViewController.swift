@@ -16,10 +16,15 @@ class PasswordForgottenViewController: UIViewController {
     
     //UI elements
     @IBOutlet weak var emailTxtField: UITextField!
-
+    @IBOutlet weak var passwordResetBtn: UIButton!
+    @IBOutlet weak var whiteView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //Round corners
+        passwordResetBtn.setRounded()
+        whiteView.roundTopCorners()
+        //Load email into textfield
         loadData()
     }
     

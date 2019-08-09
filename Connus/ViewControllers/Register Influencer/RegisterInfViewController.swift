@@ -452,16 +452,18 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
             
             //Color
             button.backgroundColor = whiteColor
-            button.tintColor = .clear
+            button.tintColor = lightBlueColor
             //CornerRadius
             button.layer.cornerRadius = 10
+            button.clipsToBounds  = true
+            
+            //button insets
+            button.imageEdgeInsets = UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3);
             //Get image from platformname
             let image = UIImage(named: platform)
-            let unselectedImage = image?.withTint(with: lightBlueColor)
-            let selectedImage = image?.withTint(with: darkBlueColor)
             //Set image as background image for button
-            button.setBackgroundImage(unselectedImage, for: .normal)
-            button.setBackgroundImage(selectedImage, for: .selected)
+            button.setImage(image, for: .normal)
+            button.setImage(image, for: .selected)
             //Set action
             button.addTarget(self, action: #selector(platformBtnTapped), for: UIControl.Event.touchUpInside)
             //Append to array
@@ -473,6 +475,12 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
     
     @objc func platformBtnTapped(sender: UIButton) {
         sender.toggle()
+        if sender.isSelected {
+            
+            sender.tintColor = darkBlueColor
+        } else {
+            sender.tintColor = lightBlueColor
+        }
     }
 //---------------------------------------------------------
 //----------------- Create elements for white view --------

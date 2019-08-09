@@ -9,16 +9,6 @@
 import UIKit
 import Firebase
 
-extension UIImageView {
-    
-    func setRounded() {
-        self.layer.cornerRadius = self.frame.size.width / 2 //(self.frame.width / 2) //instead of let radius = CGRectGetWidth(self.frame) / 2
-        
-        self.clipsToBounds = true
-        //        self.layer.masksToBounds = true
-    }
-}
-
 extension UIViewController {
     
     func calculateAge(birthdateTimestamp : Timestamp) -> Int {
@@ -61,15 +51,20 @@ extension UIView {
     func makeVisible(){
         self.alpha = CGFloat(integerLiteral: 1)
     }
+    
+    func setRounded() {
+        let cornerRadius = self.frame.size.height / 2
+        self.layer.cornerRadius = cornerRadius.rounded()
+    }
+    
+    //Only for container views
+    func roundTopCorners(){
+        self.layer.cornerRadius = 40.0
+        self.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+    }
 }
 
 extension UIImage {
-    
-    //
-    /// Tint Image
-    ///
-    /// - Parameter fillColor: UIColor
-    /// - Returns: Image with tint color
     func withTint(with fillColor: UIColor) -> UIImage? {
         let image = withRenderingMode(.alwaysTemplate)
         UIGraphicsBeginImageContextWithOptions(size, false, scale)

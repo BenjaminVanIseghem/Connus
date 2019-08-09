@@ -38,6 +38,8 @@
 		73974CC322EF7EAC0035FDCB /* RegisterInfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73974CC222EF7EAC0035FDCB /* RegisterInfViewController.swift */; };
 		73974CC422EF7EAC0035FDCB /* RegisterInfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73974CC222EF7EAC0035FDCB /* RegisterInfViewController.swift */; };
 		73974CC522EF7EAC0035FDCB /* RegisterInfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73974CC222EF7EAC0035FDCB /* RegisterInfViewController.swift */; };
+		739C12B522FD9A29003E8FE4 /* firstSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739C12B422FD9A29003E8FE4 /* firstSectionView.swift */; };
+		739C12B922FD9A51003E8FE4 /* firstSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 739C12B822FD9A51003E8FE4 /* firstSectionView.xib */; };
 		73AEE50322E861BE008CA7EF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AEE50222E861BE008CA7EF /* Constants.swift */; };
 		73B513BD22FAE8BD005F94F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73B513BC22FAE8BD005F94F0 /* GoogleService-Info.plist */; };
 		73C1A9C722EF281A00972785 /* RegisterBrandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C1A9C622EF281A00972785 /* RegisterBrandViewController.swift */; };
@@ -108,6 +110,8 @@
 		73974C7D22EF6E0B0035FDCB /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		73974C8122EF70CB0035FDCB /* ChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceViewController.swift; sourceTree = "<group>"; };
 		73974CC222EF7EAC0035FDCB /* RegisterInfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInfViewController.swift; sourceTree = "<group>"; };
+		739C12B422FD9A29003E8FE4 /* firstSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstSectionView.swift; sourceTree = "<group>"; };
+		739C12B822FD9A51003E8FE4 /* firstSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = firstSectionView.xib; sourceTree = "<group>"; };
 		73AEE50222E861BE008CA7EF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		73B513BC22FAE8BD005F94F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		73C1A9C622EF281A00972785 /* RegisterBrandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBrandViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +210,31 @@
 				73AEE50222E861BE008CA7EF /* Constants.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		739C12B322FD99B6003E8FE4 /* Register Influencer Views */ = {
+			isa = PBXGroup;
+			children = (
+				739C12B722FD9A39003E8FE4 /* swift */,
+				739C12B622FD9A2E003E8FE4 /* xib */,
+			);
+			path = "Register Influencer Views";
+			sourceTree = "<group>";
+		};
+		739C12B622FD9A2E003E8FE4 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				739C12B822FD9A51003E8FE4 /* firstSectionView.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		739C12B722FD9A39003E8FE4 /* swift */ = {
+			isa = PBXGroup;
+			children = (
+				739C12B422FD9A29003E8FE4 /* firstSectionView.swift */,
+			);
+			path = swift;
 			sourceTree = "<group>";
 		};
 		73C1A9C822EF374300972785 /* Register Influencer */ = {
@@ -329,6 +358,7 @@
 		73F467CA2275D8B80017B7E9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				739C12B322FD99B6003E8FE4 /* Register Influencer Views */,
 				73EC813222EB43530023D174 /* CompanyCardView.swift */,
 				731B472F22EB82B40067C39C /* CompanyCardView.xib */,
 				731B473E22EB97B70067C39C /* LikeOverlayView.swift */,
@@ -459,6 +489,7 @@
 				73F46798227381030017B7E9 /* LaunchScreen.storyboard in Resources */,
 				731B473822EB87770067C39C /* Coco-Gothic-Bold-Italic-trial.ttf in Resources */,
 				73CEACC822DF4DA5004A891A /* Assets.xcassets in Resources */,
+				739C12B922FD9A51003E8FE4 /* firstSectionView.xib in Resources */,
 				731B473B22EB87770067C39C /* Coco-Gothic-Light-Italic-trial.ttf in Resources */,
 				731B473922EB87770067C39C /* Coco-Gothic-Bold-trial.ttf in Resources */,
 				731B474122EB97EA0067C39C /* LikeOverlayView.xib in Resources */,
@@ -640,6 +671,7 @@
 				73974CC322EF7EAC0035FDCB /* RegisterInfViewController.swift in Sources */,
 				73EC813322EB43530023D174 /* CompanyCardView.swift in Sources */,
 				73CEACC422DDF9F3004A891A /* ProfileInfluencerViewController.swift in Sources */,
+				739C12B522FD9A29003E8FE4 /* firstSectionView.swift in Sources */,
 				73974C7C22EF66F70035FDCB /* LogInViewController.swift in Sources */,
 				73F4678E227381010017B7E9 /* SwipeViewController.swift in Sources */,
 				7387E30822F03E2300C2D3B1 /* PasswordForgottenViewController.swift in Sources */,

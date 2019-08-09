@@ -18,13 +18,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="top_logo_white" translatesAutoresizingMaskIntoConstraints="NO" id="y65-fo-4XO">
-                                <rect key="frame" x="0.0" y="248" width="414" height="414"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top_logo_white" translatesAutoresizingMaskIntoConstraints="NO" id="y65-fo-4XO">
+                                <rect key="frame" x="0.0" y="241" width="414" height="414"/>
                                 <color key="tintColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="GPj-sq-zIV"/>
+                                    <constraint firstAttribute="height" constant="414" id="SKK-eu-OcB"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.56078431370000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="y65-fo-4XO" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="RsK-wi-VbJ"/>
+                            <constraint firstItem="y65-fo-4XO" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="fil-ve-e6e"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
