@@ -361,14 +361,14 @@
                                     <constraint firstAttribute="height" constant="320" id="kht-Ll-uyI"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top_logo_white" translatesAutoresizingMaskIntoConstraints="NO" id="ieh-xw-hYo">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top_logo_white" translatesAutoresizingMaskIntoConstraints="NO" id="ieh-xw-hYo">
                                 <rect key="frame" x="132.5" y="10" width="110" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="LCT-vR-o8I"/>
                                     <constraint firstAttribute="width" constant="110" id="jfD-CM-eK9"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jj0-S7-TpP" userLabel="Profile Name And Location View">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jj0-S7-TpP" userLabel="Profile Name And Location View">
                                 <rect key="frame" x="40" y="200" width="295" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="cAZ-hn-zet"/>
@@ -1184,7 +1184,7 @@
         <scene sceneID="Sik-b9-oZV">
             <objects>
                 <viewController id="dDX-K4-Rzi" customClass="RegisterInfViewController" customModule="Connus" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xAP-3J-ncg">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="xAP-3J-ncg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1342,8 +1342,8 @@
                                     <action selector="nextBtnPressed:" destination="dDX-K4-Rzi" eventType="touchUpInside" id="FHH-kj-l0d"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dBj-Nv-ROA">
-                                <rect key="frame" x="0.0" y="622" width="375" height="0.0"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dBj-Nv-ROA">
+                                <rect key="frame" x="0.0" y="646" width="375" height="250"/>
                                 <color key="backgroundColor" red="0.0" green="0.56078431370000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <userDefinedRuntimeAttributes>
@@ -1353,7 +1353,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hp1-RO-MAD" userLabel="White View">
-                                <rect key="frame" x="0.0" y="722" width="375" height="14"/>
+                                <rect key="frame" x="0.0" y="746" width="375" height="150"/>
                                 <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1361,8 +1361,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWL-y7-iRN">
-                                <rect key="frame" x="40" y="592" width="169" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Already have an account?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWL-y7-iRN">
+                                <rect key="frame" x="40" y="832" width="169" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="TnI-SZ-vGV"/>
                                 </constraints>
@@ -1370,8 +1370,8 @@
                                 <color key="textColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uuf-Rz-mzO">
-                                <rect key="frame" x="214" y="587" width="42" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uuf-Rz-mzO">
+                                <rect key="frame" x="214" y="827" width="42" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="kt1-01-ekY"/>
                                 </constraints>
