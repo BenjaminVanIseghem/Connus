@@ -19,6 +19,16 @@ extension UIViewController {
         //Extract year from date and return value
         return ageComponents.year!
     }
+    
+    func hideKeyboardWhenTappedAround() {
+        let tapGesture = UITapGestureRecognizer(target: self,
+                                                action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func hideKeyboard() {
+        view.endEditing(true)
+    }
 }
 
 extension UIColor {
@@ -62,6 +72,14 @@ extension UIView {
         self.layer.cornerRadius = 40.0
         self.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
+    
+    func instantiateFromNib<T: UIView>(viewType: T.Type) -> T {
+        return Bundle.main.loadNibNamed(String(describing: viewType), owner: nil, options: nil)?.first as! T
+    }
+    
+//    public class func instantiateFromNib() -> Self {
+//        return instantiateFromNib(viewType: self)
+//    }
 }
 
 extension UIImage {

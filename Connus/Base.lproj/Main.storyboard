@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y61-9l-Z72">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yhW-sU-ZLW">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -346,6 +346,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2U6-P0-4sp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-190" y="872"/>
+        </scene>
+        <!--Temp View Controller-->
+        <scene sceneID="a45-1c-7it">
+            <objects>
+                <viewController id="yhW-sU-ZLW" customClass="TempViewController" customModule="Connus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uM2-mD-llo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52Z-TB-Azh">
+                                <rect key="frame" x="40" y="120" width="295" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="kht-Ll-uyI"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top_logo_white" translatesAutoresizingMaskIntoConstraints="NO" id="ieh-xw-hYo">
+                                <rect key="frame" x="132.5" y="10" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="LCT-vR-o8I"/>
+                                    <constraint firstAttribute="width" constant="110" id="jfD-CM-eK9"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jj0-S7-TpP" userLabel="Profile Name And Location View">
+                                <rect key="frame" x="40" y="200" width="295" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="cAZ-hn-zet"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.023529411760000001" green="0.1137254902" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="52Z-TB-Azh" firstAttribute="top" secondItem="hts-D5-NJL" secondAttribute="top" constant="100" id="3br-LZ-fF2"/>
+                            <constraint firstItem="jj0-S7-TpP" firstAttribute="leading" secondItem="hts-D5-NJL" secondAttribute="leading" constant="40" id="8qf-dV-PmF"/>
+                            <constraint firstItem="52Z-TB-Azh" firstAttribute="leading" secondItem="hts-D5-NJL" secondAttribute="leading" constant="40" id="9gw-ow-c94"/>
+                            <constraint firstItem="ieh-xw-hYo" firstAttribute="top" secondItem="uM2-mD-llo" secondAttribute="top" constant="10" id="LCg-RE-Plj"/>
+                            <constraint firstItem="ieh-xw-hYo" firstAttribute="centerX" secondItem="uM2-mD-llo" secondAttribute="centerX" id="dP2-2G-IFw"/>
+                            <constraint firstItem="jj0-S7-TpP" firstAttribute="top" secondItem="52Z-TB-Azh" secondAttribute="top" constant="80" id="ii2-Ow-VbG"/>
+                            <constraint firstItem="jj0-S7-TpP" firstAttribute="centerX" secondItem="uM2-mD-llo" secondAttribute="centerX" id="qnC-Cn-AfP"/>
+                            <constraint firstItem="52Z-TB-Azh" firstAttribute="centerX" secondItem="uM2-mD-llo" secondAttribute="centerX" id="r7h-nm-wj4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hts-D5-NJL"/>
+                    </view>
+                    <connections>
+                        <outlet property="firstSectionView" destination="52Z-TB-Azh" id="XaN-4P-Ucw"/>
+                        <outlet property="profileNameAndLocationView" destination="jj0-S7-TpP" id="ObH-Bu-eLc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4b2-WU-EyS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-9591.2000000000007" y="-531.18440779610194"/>
         </scene>
         <!--WelcomeViewController-->
         <scene sceneID="JK2-2E-acB">
@@ -1134,7 +1184,7 @@
         <scene sceneID="Sik-b9-oZV">
             <objects>
                 <viewController id="dDX-K4-Rzi" customClass="RegisterInfViewController" customModule="Connus" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="xAP-3J-ncg">
+                    <view key="view" contentMode="scaleToFill" id="xAP-3J-ncg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1292,8 +1342,8 @@
                                     <action selector="nextBtnPressed:" destination="dDX-K4-Rzi" eventType="touchUpInside" id="FHH-kj-l0d"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dBj-Nv-ROA">
-                                <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dBj-Nv-ROA">
+                                <rect key="frame" x="0.0" y="622" width="375" height="0.0"/>
                                 <color key="backgroundColor" red="0.0" green="0.56078431370000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <userDefinedRuntimeAttributes>
@@ -1311,8 +1361,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Already have an account?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWL-y7-iRN">
-                                <rect key="frame" x="40" y="637" width="169" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWL-y7-iRN">
+                                <rect key="frame" x="40" y="592" width="169" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="TnI-SZ-vGV"/>
                                 </constraints>
@@ -1320,8 +1370,8 @@
                                 <color key="textColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uuf-Rz-mzO">
-                                <rect key="frame" x="214" y="632" width="42" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uuf-Rz-mzO">
+                                <rect key="frame" x="214" y="587" width="42" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="kt1-01-ekY"/>
                                 </constraints>
@@ -1948,12 +1998,13 @@
         <image name="like" width="42.5" height="42.5"/>
         <image name="second" width="30" height="30"/>
         <image name="top_logo" width="666.5" height="666.5"/>
+        <image name="top_logo_white" width="666.5" height="666.5"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="UI6-FW-d0F"/>
         <segue reference="IaV-pF-iej"/>
         <segue reference="1od-lu-k3y"/>
-        <segue reference="vfR-yj-eqW"/>
+        <segue reference="Bua-bn-qhZ"/>
         <segue reference="KKp-TD-ztb"/>
     </inferredMetricsTieBreakers>
 </document>

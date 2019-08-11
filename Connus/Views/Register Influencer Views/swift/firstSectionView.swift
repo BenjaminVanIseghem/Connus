@@ -8,14 +8,17 @@
 
 import UIKit
 
-class firstSectionView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+class FirstSectionView: UIView {
+    
+    //Image views
+    @IBOutlet weak var middleImageView: UIImageView!
+    @IBOutlet weak var smallImageView: UIImageView!
+    
+    //Text fields
+    @IBOutlet weak var profileNameTextField: UITextField!
+    @IBOutlet weak var locationTextField: UITextField!
+    
+    //Label
+    @IBOutlet weak var infoLbl: UILabel!
+    
 }
