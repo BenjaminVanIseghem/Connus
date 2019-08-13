@@ -18,63 +18,219 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SecondSectionView" customModule="Connus" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="295" height="375"/>
+            <rect key="frame" x="0.0" y="0.0" width="330" height="290"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Platforms that show your work" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pxr-GB-u9H">
-                    <rect key="frame" x="0.0" y="0.0" width="295" height="63"/>
+                    <rect key="frame" x="0.0" y="0.0" width="330" height="65"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="65" id="JPN-3v-9iz"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="CocoGothic-Bold" family="Coco Gothic" pointSize="23"/>
                     <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="msu-WA-YDA">
-                    <rect key="frame" x="0.0" y="83" width="295" height="50"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="DjH-2c-ex7" userLabel="Platform Buttons Stack View">
+                    <rect key="frame" x="0.0" y="90" width="330" height="120"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWP-ry-x24" userLabel="Instagram">
-                            <rect key="frame" x="0.0" y="0.0" width="43" height="50"/>
-                            <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="Button" image="Facebook"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBf-c9-jIU" userLabel="Facebook">
-                            <rect key="frame" x="63" y="0.0" width="43" height="50"/>
-                            <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="Button" image="Facebook"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wg-eE-oSE" userLabel="Twitter">
-                            <rect key="frame" x="126" y="0.0" width="43" height="50"/>
-                            <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="Button" image="Facebook"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yea-gI-wsT" userLabel="Youtube">
-                            <rect key="frame" x="189" y="0.0" width="43" height="50"/>
-                            <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="Button" image="Facebook"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0E-I4-99o" userLabel="Snapchat">
-                            <rect key="frame" x="252" y="0.0" width="43" height="50"/>
-                            <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="Button" image="Facebook"/>
-                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="msu-WA-YDA" userLabel="First Row Stack View">
+                            <rect key="frame" x="0.0" y="0.0" width="330" height="50"/>
+                            <subviews>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWP-ry-x24" userLabel="Instagram">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="cWP-ry-x24" secondAttribute="height" multiplier="1:1" id="NME-pZ-RUj"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                    <state key="normal" title="Instagram" image="Instagram"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBf-c9-jIU" userLabel="Facebook">
+                                    <rect key="frame" x="70" y="0.0" width="50" height="50"/>
+                                    <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="aBf-c9-jIU" secondAttribute="height" multiplier="1:1" id="NK4-iK-H6s"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                    <state key="normal" title="Facebook" image="Facebook"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wg-eE-oSE" userLabel="Twitter">
+                                    <rect key="frame" x="140" y="0.0" width="50" height="50"/>
+                                    <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="3wg-eE-oSE" secondAttribute="height" multiplier="1:1" id="gbW-Md-k0j"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                    <state key="normal" title="Twitter" image="Twitter"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yea-gI-wsT" userLabel="Youtube">
+                                    <rect key="frame" x="210" y="0.0" width="50" height="50"/>
+                                    <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="Yea-gI-wsT" secondAttribute="height" multiplier="1:1" id="NeU-jd-JBs"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                    <state key="normal" title="Youtube" image="Youtube"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0E-I4-99o" userLabel="Snapchat">
+                                    <rect key="frame" x="280" y="0.0" width="50" height="50"/>
+                                    <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="i0E-I4-99o" secondAttribute="height" multiplier="1:1" id="L14-jK-igl"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                    <state key="normal" title="Snapchat" image="Snapchat"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QB0-Ac-4gN" userLabel="Second Row Stack View">
+                            <rect key="frame" x="0.0" y="70" width="330" height="50"/>
+                            <subviews>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4J-y6-eOA">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="A4J-y6-eOA" secondAttribute="height" multiplier="1:1" id="qHc-4C-UyN"/>
+                                    </constraints>
+                                    <state key="normal" title="Pinterest" image="Pinterest"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAr-st-ybl">
+                                    <rect key="frame" x="70" y="0.0" width="50" height="50"/>
+                                    <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="AAr-st-ybl" secondAttribute="height" multiplier="1:1" id="fc3-35-fl6"/>
+                                    </constraints>
+                                    <state key="normal" title="Tiktok" image="Tiktok"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7o-7V-ksf">
+                                    <rect key="frame" x="140" y="0.0" width="50" height="50"/>
+                                    <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="u7o-7V-ksf" secondAttribute="height" multiplier="1:1" id="deV-AV-y24"/>
+                                    </constraints>
+                                    <state key="normal" title="Twitch" image="Twitch"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CW9-Jf-NxT" userLabel="empty">
+                                    <rect key="frame" x="210" y="0.0" width="50" height="50"/>
+                                    <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="CW9-Jf-NxT" secondAttribute="height" multiplier="1:1" id="7K2-Bq-Wef"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7N4-T6-gU5" userLabel="empty">
+                                    <rect key="frame" x="280" y="0.0" width="50" height="50"/>
+                                    <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="7N4-T6-gU5" secondAttribute="height" multiplier="1:1" id="xZe-Xd-jFL"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                        </stackView>
                     </subviews>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="AoX-Hr-nu8"/>
-                    </constraints>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJ3-8L-rIe">
+                    <rect key="frame" x="250" y="260" width="80" height="30"/>
+                    <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="Ap7-Ow-IpD"/>
+                        <constraint firstAttribute="height" constant="30" id="SC5-RB-8Lc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="CocoGothic-Bold" family="Coco Gothic" pointSize="14"/>
+                    <state key="normal" title="Next">
+                        <color key="titleColor" red="0.0" green="0.56078431370000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
             </subviews>
             <constraints>
-                <constraint firstItem="Pxr-GB-u9H" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="HFZ-p2-kP3"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Pxr-GB-u9H" secondAttribute="trailing" id="XJn-xz-YeW"/>
-                <constraint firstItem="Pxr-GB-u9H" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="XXO-IG-F2j"/>
-                <constraint firstItem="msu-WA-YDA" firstAttribute="top" secondItem="Pxr-GB-u9H" secondAttribute="bottom" constant="20" id="YLs-SS-EhI"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="msu-WA-YDA" secondAttribute="trailing" id="jOu-pg-AgV"/>
-                <constraint firstItem="msu-WA-YDA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="uj6-na-VgY"/>
+                <constraint firstItem="Pxr-GB-u9H" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="5Bl-km-JKk"/>
+                <constraint firstItem="Pxr-GB-u9H" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="5a8-MQ-c7E"/>
+                <constraint firstItem="jJ3-8L-rIe" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="BxX-Xq-MK0"/>
+                <constraint firstItem="jJ3-8L-rIe" firstAttribute="top" secondItem="DjH-2c-ex7" secondAttribute="bottom" constant="50" id="KSv-or-RlG"/>
+                <constraint firstItem="Pxr-GB-u9H" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="WW1-wX-ybY"/>
+                <constraint firstItem="DjH-2c-ex7" firstAttribute="top" secondItem="Pxr-GB-u9H" secondAttribute="bottom" constant="25" id="bXH-Fp-YM5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DjH-2c-ex7" secondAttribute="trailing" id="fty-En-HZs"/>
+                <constraint firstItem="DjH-2c-ex7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="vud-sl-adZ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="132" y="24.7376311844078"/>
+            <connections>
+                <outlet property="nextBtn" destination="jJ3-8L-rIe" id="KYk-aB-B2g"/>
+                <outlet property="platformInfoLbl" destination="Pxr-GB-u9H" id="DJ0-vf-DKI"/>
+                <outletCollection property="platformBtnCollection" destination="cWP-ry-x24" collectionClass="NSMutableArray" id="Mct-78-j0x"/>
+                <outletCollection property="platformBtnCollection" destination="aBf-c9-jIU" collectionClass="NSMutableArray" id="dpZ-ee-tm5"/>
+                <outletCollection property="platformBtnCollection" destination="3wg-eE-oSE" collectionClass="NSMutableArray" id="9eM-h3-dzi"/>
+                <outletCollection property="platformBtnCollection" destination="Yea-gI-wsT" collectionClass="NSMutableArray" id="sVB-dc-1l7"/>
+                <outletCollection property="platformBtnCollection" destination="i0E-I4-99o" collectionClass="NSMutableArray" id="O5Y-q8-Hc5"/>
+                <outletCollection property="platformBtnCollection" destination="A4J-y6-eOA" collectionClass="NSMutableArray" id="XpP-dQ-hyh"/>
+                <outletCollection property="platformBtnCollection" destination="AAr-st-ybl" collectionClass="NSMutableArray" id="2oc-nf-mn6"/>
+                <outletCollection property="platformBtnCollection" destination="u7o-7V-ksf" collectionClass="NSMutableArray" id="8Ic-cG-ELY"/>
+            </connections>
+            <point key="canvasLocation" x="201.59999999999999" y="-13.493253373313344"/>
         </view>
     </objects>
     <resources>
         <image name="Facebook" width="666.5" height="666.5"/>
+        <image name="Instagram" width="666.5" height="666.5"/>
+        <image name="Pinterest" width="666.5" height="666.5"/>
+        <image name="Snapchat" width="666.5" height="666.5"/>
+        <image name="Tiktok" width="666.5" height="666.5"/>
+        <image name="Twitch" width="666.5" height="666.5"/>
+        <image name="Twitter" width="666.5" height="666.5"/>
+        <image name="Youtube" width="666.5" height="666.5"/>
     </resources>
 </document>

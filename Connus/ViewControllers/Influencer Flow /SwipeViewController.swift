@@ -19,6 +19,13 @@ class SwipeViewController: UIViewController {
         
         kolodaView.dataSource = self
         kolodaView.delegate = self
+        
+        //        DispatchQueue.global(qos: .userInitiated).async {
+        //            sleep(4)
+        //            // Bounce back to the main thread to update the UI
+        //            DispatchQueue.main.async {
+        //            }
+        //        }
     }
     
     @IBAction func likeBtnPressed(_ sender: UIButton) {

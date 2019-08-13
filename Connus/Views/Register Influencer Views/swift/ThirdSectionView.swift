@@ -9,13 +9,14 @@
 import UIKit
 
 class ThirdSectionView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+    //Labels
+    @IBOutlet weak var infoLbl: UILabel!
+    @IBOutlet weak var extraInfoLbl: UILabel!
+    
+    //Interests buttons
+    @IBOutlet var interestBtnCollection: [UIButton]!
+    
+    
+    //Finish button
+    @IBOutlet weak var finishBtn: UIButton!
 }
