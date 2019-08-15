@@ -18,7 +18,6 @@
 		731B473C22EB87770067C39C /* Coco-Gothic-Regular-trial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 731B473622EB87770067C39C /* Coco-Gothic-Regular-trial.ttf */; };
 		731B473F22EB97B70067C39C /* LikeOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731B473E22EB97B70067C39C /* LikeOverlayView.swift */; };
 		731B474122EB97EA0067C39C /* LikeOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 731B474022EB97EA0067C39C /* LikeOverlayView.xib */; };
-		731D7EA522FB0BF3000DF6AC /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D7EA422FB0BF3000DF6AC /* TempViewController.swift */; };
 		7365454522F755F1008A9BC6 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7365454422F755F1008A9BC6 /* WelcomeViewController.swift */; };
 		7369CE3822FF193E00AB379E /* ProfileNameAndImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7369CE3722FF193E00AB379E /* ProfileNameAndImageView.swift */; };
 		7369CE3A22FF195400AB379E /* SecondSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7369CE3922FF195400AB379E /* SecondSectionView.swift */; };
@@ -26,6 +25,8 @@
 		7369CE3E22FF197900AB379E /* ProfileNameAndImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7369CE3D22FF197900AB379E /* ProfileNameAndImageView.xib */; };
 		7369CE4022FF198B00AB379E /* SecondSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7369CE3F22FF198B00AB379E /* SecondSectionView.xib */; };
 		7369CE4222FF199700AB379E /* ThirdSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7369CE4122FF199700AB379E /* ThirdSectionView.xib */; };
+		736DF4C323049109001E66B7 /* FirstRegisterInfluencerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736DF4C223049109001E66B7 /* FirstRegisterInfluencerViewController.swift */; };
+		736DF4C52305523E001E66B7 /* ComingSoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736DF4C42305523E001E66B7 /* ComingSoonViewController.swift */; };
 		7384A7562279E5E20020CAF6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A7552279E5E20020CAF6 /* Extensions.swift */; };
 		7384A758227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A757227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift */; };
 		7384A759227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7384A757227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift */; };
@@ -106,7 +107,6 @@
 		731B473622EB87770067C39C /* Coco-Gothic-Regular-trial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Coco-Gothic-Regular-trial.ttf"; sourceTree = "<group>"; };
 		731B473E22EB97B70067C39C /* LikeOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeOverlayView.swift; sourceTree = "<group>"; };
 		731B474022EB97EA0067C39C /* LikeOverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeOverlayView.xib; sourceTree = "<group>"; };
-		731D7EA422FB0BF3000DF6AC /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
 		7365454422F755F1008A9BC6 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		7369CE3722FF193E00AB379E /* ProfileNameAndImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNameAndImageView.swift; sourceTree = "<group>"; };
 		7369CE3922FF195400AB379E /* SecondSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSectionView.swift; sourceTree = "<group>"; };
@@ -114,6 +114,8 @@
 		7369CE3D22FF197900AB379E /* ProfileNameAndImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileNameAndImageView.xib; sourceTree = "<group>"; };
 		7369CE3F22FF198B00AB379E /* SecondSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondSectionView.xib; sourceTree = "<group>"; };
 		7369CE4122FF199700AB379E /* ThirdSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdSectionView.xib; sourceTree = "<group>"; };
+		736DF4C223049109001E66B7 /* FirstRegisterInfluencerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRegisterInfluencerViewController.swift; sourceTree = "<group>"; };
+		736DF4C42305523E001E66B7 /* ComingSoonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonViewController.swift; sourceTree = "<group>"; };
 		7384A7552279E5E20020CAF6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7384A757227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterInfluencerViewController.swift; sourceTree = "<group>"; };
 		7384A75B227A310C0020CAF6 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				73F467C62275A6060017B7E9 /* RegisterInfluencerViewController.swift */,
 				7384A757227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift */,
 				73974CC222EF7EAC0035FDCB /* RegisterInfViewController.swift */,
+				736DF4C223049109001E66B7 /* FirstRegisterInfluencerViewController.swift */,
 			);
 			path = "Register Influencer";
 			sourceTree = "<group>";
@@ -297,7 +300,7 @@
 				73974C8122EF70CB0035FDCB /* ChoiceViewController.swift */,
 				7387E30722F03E2300C2D3B1 /* PasswordForgottenViewController.swift */,
 				7365454422F755F1008A9BC6 /* WelcomeViewController.swift */,
-				731D7EA422FB0BF3000DF6AC /* TempViewController.swift */,
+				736DF4C42305523E001E66B7 /* ComingSoonViewController.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -685,6 +688,7 @@
 				73C1A9C722EF281A00972785 /* RegisterBrandViewController.swift in Sources */,
 				73AEE50322E861BE008CA7EF /* Constants.swift in Sources */,
 				73F467C42273890D0017B7E9 /* EntryViewController.swift in Sources */,
+				736DF4C323049109001E66B7 /* FirstRegisterInfluencerViewController.swift in Sources */,
 				7369CE3822FF193E00AB379E /* ProfileNameAndImageView.swift in Sources */,
 				7384A758227A297D0020CAF6 /* SecondRegisterInfluencerViewController.swift in Sources */,
 				73F467D22276186F0017B7E9 /* Checkbox.swift in Sources */,
@@ -692,6 +696,7 @@
 				73F4678C227381010017B7E9 /* AppDelegate.swift in Sources */,
 				73974CC322EF7EAC0035FDCB /* RegisterInfViewController.swift in Sources */,
 				73EC813322EB43530023D174 /* CompanyCardView.swift in Sources */,
+				736DF4C52305523E001E66B7 /* ComingSoonViewController.swift in Sources */,
 				7369CE3C22FF196100AB379E /* ThirdSectionView.swift in Sources */,
 				73CEACC422DDF9F3004A891A /* ProfileInfluencerViewController.swift in Sources */,
 				739C12B522FD9A29003E8FE4 /* FirstSectionView.swift in Sources */,
@@ -700,7 +705,6 @@
 				7387E30822F03E2300C2D3B1 /* PasswordForgottenViewController.swift in Sources */,
 				731B473F22EB97B70067C39C /* LikeOverlayView.swift in Sources */,
 				7369CE3A22FF195400AB379E /* SecondSectionView.swift in Sources */,
-				731D7EA522FB0BF3000DF6AC /* TempViewController.swift in Sources */,
 				7384A7562279E5E20020CAF6 /* Extensions.swift in Sources */,
 				73974C8222EF70CB0035FDCB /* ChoiceViewController.swift in Sources */,
 				7365454522F755F1008A9BC6 /* WelcomeViewController.swift in Sources */,

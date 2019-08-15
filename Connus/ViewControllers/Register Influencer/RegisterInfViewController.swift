@@ -8,45 +8,44 @@
 
 import UIKit
 
+struct Views {
+    var first = "firstSectionView"
+    var second = "lightblueView"
+    var third = "whiteView"
+}
+
 class RegisterInfViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     //Connected UI elements
-    @IBOutlet weak var bigImageView: UIImageView!
-    @IBOutlet weak var middleImageView: UIImageView!
-    @IBOutlet weak var smallImageView: UIImageView!
-    @IBOutlet weak var profileNameTxtField: UITextField!
-    @IBOutlet weak var locationTxtField: UITextField!
-    @IBOutlet weak var infoLbl: UILabel!
-    @IBOutlet weak var selectProfileBtn: UIButton!
-    @IBOutlet weak var profileStackView: UIStackView!
-    @IBOutlet weak var locationStackView: UIStackView!
-    @IBOutlet weak var nextBtn: UIButton!
-    @IBOutlet weak var lightBlueView: UIView!
-    @IBOutlet weak var whiteView: UIView!
+    @IBOutlet weak var firstSectionView: UIView!
+    @IBOutlet weak var profileNameAndLocationView: UIView!
+    @IBOutlet weak var logoImageView: UIImageView!
     
-    //Labels
-    var profileNameLbl : UILabel?
-    var nameAndLocationLbl : UILabel?
-    var platformsLbl : UILabel?
-    var genresLbl : UILabel?
-    var genresInfoLbl : UILabel?
+    //UIViews
+    var lightblueView : UIView?
+    var whiteView : UIView?
+    var interestsView : UIView?
+    
+    //Sections views
+    var firstSection : FirstSectionView?
+    var profNameView : ProfileNameAndImageView?
+    var platformView : SecondSectionView?
+    var genresView : ThirdSectionView?
     
     //Buttons
-    var whiteNextBtn : UIButton?
-    var finishBtn : UIButton?
+    var blueNextBtn : UIButton?
+    var selectProfilePictureBtn: UIButton?
+    var platformButtons : [UIButton]?
+    var interestButtons : [UIButton]?
     
-    //Other
-    var platformButtons : [UIButton] = []
-    var platformButtonsView : UIView?
-    var genresButtons : [UIButton] = []
-    var genresButtonsView : UIView?
-    var currentActiveView : String?
+    //Extra variables
+    var views = Views()
+    var currentActiveSectionView : String?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.hideShadow()
     }
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,21 +53,425 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
         //Set navigation bar color
         self.navigationController?.navigationBar.barTintColor = darkBlueColor
 
-        //Create extra labels
-        profileNameLbl = self.createProfileLbl()
-        nameAndLocationLbl = self.createNameAndLocationLabel()
-        //create invisible elements to show on swipe or next button press
-        createElementsForLightBlueView()
-        whiteView.isUserInteractionEnabled = true
-        createElementsForWhiteView()
+        //Init views
+        self.initViews()
+        //When typing, this function dismisses keyboard when tapped elsewhere
+        self.hideKeyboardWhenTappedAround()
+        //Add swipe gesture recognizers
+        self.addSwipeGestureRecognizers()
         //Set current active view
-        self.currentActiveView = "darkBlueView"
-        
-        //Add gesture recognizers
-        addSwipeGestureRecognizers()
+        self.currentActiveSectionView = views.first
     }
     
-    @IBAction func setProfilePictureBtnPressed(_ sender: UIButton) {
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        if self.view.frame.height > 667 {
+            //Set image a bit lower than on the smaller screens
+            self.logoImageView.center = CGPoint(x: self.logoImageView.frame.midX, y: self.logoImageView.frame.midY + 10)
+        }
+    }
+    
+    private func initViews() {
+        //Load views from xib files
+        firstSection = firstSectionView.instantiateFromNib(viewType: FirstSectionView.self)
+        profNameView = profileNameAndLocationView.instantiateFromNib(viewType: ProfileNameAndImageView.self)
+        
+        //Add actions to the buttons of the view
+        firstSection?.whiteNextBtn.addTarget(self, action: #selector(blueNextBtnPressed), for: .touchUpInside)
+        firstSection?.selectProfilePictureBtn.addTarget(self, action: #selector(selectProfilePictureBtnPressed), for: .touchUpInside)
+        
+        //Add to superview
+        self.profileNameAndLocationView.addSubview(profNameView!)
+        self.profileNameAndLocationView.makeInvisible() //This one should be invisible and animate to visible on next click
+        self.firstSectionView.addSubview(firstSection!)
+        
+        //Check view height, if larger than iphone 6 -> init is slightly bigger
+        if self.view.frame.height > 667 {
+            //Set correct view positions
+            let x = CGFloat(integerLiteral: 0)
+            var height = self.view.frame.height * 0.3358
+            var y = self.view.frame.height - height
+            let width = self.view.frame.width
+            //Set rect to use as view frame
+            var rect = CGRect(x: x, y: y, width: width, height: height)
+            //init lightblueView
+            self.lightblueView = UIView(frame: rect)
+            
+            //override values to use for whiteView
+            height = self.view.frame.height * 0.20
+            y = self.view.frame.height - height
+            //Set rect to use as whiteView frame
+            rect = CGRect(x: x, y: y, width: width, height: height)
+            //init whiteView
+            self.whiteView = UIView(frame: rect)
+        } else {
+            //Set correct view positions
+            let x = CGFloat(integerLiteral: 0)
+            var height = self.view.frame.height * 0.30
+            var y = self.view.frame.height - height
+            let width = self.view.frame.width
+            //Set rect to use as lightblueView frame
+            var rect = CGRect(x: x, y: y, width: width, height: height)
+            //init lightblueView
+            self.lightblueView = UIView(frame: rect)
+            
+            //override values to use for whiteView
+            height = self.view.frame.height * 0.16
+            y = self.view.frame.height - height
+            //Set rect to use as whiteView frame
+            rect = CGRect(x: x, y: y, width: width, height: height)
+            //init whiteView
+            self.whiteView = UIView(frame: rect)
+        }
+        
+        //set the backgroundcolors
+        self.lightblueView?.backgroundColor = lightBlueColor
+        self.whiteView?.backgroundColor = whiteColor
+        
+        //Set views with rounded top corners
+        self.lightblueView?.roundTopCorners()
+        self.whiteView?.roundTopCorners()
+        
+        //Make sure no resizing happens when shrinking or growing the views
+        self.lightblueView?.autoresizesSubviews = false
+        self.whiteView?.autoresizesSubviews = false
+        
+        self.initSecondSection()
+        self.initThirdSection()
+        
+        //Add views to superview
+        self.view.addSubview(lightblueView!)
+        self.view.addSubview(whiteView!)
+        
+        //Add redirect to login button + label
+        self.initLoginBtnAndLabel()
+        
+        
+    }
+    
+    private func initSecondSection(){
+        self.platformView = UIView().instantiateFromNib(viewType: SecondSectionView.self)
+        //Add action to button from the SecondSectionView xib
+        self.platformView!.nextBtn.addTarget(self, action: #selector(whiteNextBtnPressed), for: .touchUpInside)
+        //Make invisible
+        self.platformView?.makeInvisible()
+        //Add to lightblueView
+        self.lightblueView?.addSubview(self.platformView!)
+        //Adjust position relative to superview
+        let height = (self.lightblueView!.frame.width - 80) / 1.14 //1.14 is th aspect ratio of the platformview
+        let r = CGRect(x: 40, y: 35, width: Int(self.lightblueView!.frame.width) - 80, height: Int(height))
+        self.platformView?.frame = r
+        
+        //Set extra parameters for the platform buttons
+        self.platformButtons = self.platformView?.platformBtnCollection
+        for button in self.platformButtons! {
+            button.addTarget(self, action: #selector(platformBtnPressed), for: .touchUpInside)
+        }
+    }
+    
+    private func initThirdSection(){
+        self.genresView = UIView().instantiateFromNib(viewType: ThirdSectionView.self)
+        //Add action to button from the ThirdSectionView xib
+        self.genresView?.finishBtn.addTarget(self, action: #selector(finishBtnPressed), for: .touchUpInside)
+        //Make invisible
+        self.genresView?.makeInvisible()
+        //Add to whiteView
+        self.whiteView?.addSubview(self.genresView!)
+        //Adjust position relative to superview
+        let height = (self.whiteView!.frame.width - 80) / 1.03 //1.03 is th aspect ratio of the genresView
+        let r = CGRect(x: 40, y: 35, width: Int(self.whiteView!.frame.width) - 80, height: Int(height))
+        self.genresView?.frame = r
+        
+        //Set extra parameters for the genres of interest buttons
+        self.interestButtons = self.genresView?.interestBtnCollection
+        for button in self.interestButtons! {
+            button.addTarget(self, action: #selector(interestBtnPressed), for: .touchUpInside)
+        }
+    }
+    
+    private func initLoginBtnAndLabel() {
+        //Calculate frame for label
+        let height = 20
+        let width = 170
+        let y = Int(self.view.frame.height) - (height + 20)
+        
+        let rect = CGRect(x: 40, y: y, width: width, height: height)
+        //create label
+        let label = UILabel(frame: rect)
+        
+        //Color
+        label.font = UIFont.init(name: "CocoGothic", size: 14)
+        //Font
+        label.textColor = nearlyBlackColor
+        //Text
+        label.text = "Already have an account?"
+        
+        let btnHeight = 30
+        let btnWidth = 42
+        let x = Int(label.frame.maxX) + 5
+        
+        let r = CGRect(x: x, y: Int(label.frame.minY) - 5, width: btnWidth, height: btnHeight)
+        //create button
+        let button = UIButton(type: .system)
+        button.frame = r
+        
+        //Color
+        button.setTitleColor(lightBlueColor, for: .normal)
+        //Font
+        button.titleLabel?.font = UIFont(name: "CocoGothic", size: 14)
+        //Text
+        button.setTitle("Log in", for: .normal)
+        //Add action to button
+        button.addTarget(self, action: #selector(loginBtnPressed), for: .touchUpInside)
+        
+        //Add to superview
+        self.view.addSubview(label)
+        self.view.addSubview(button)
+    }
+    //------------------------ Animations ----------------------------------
+    private func animateToFirstView(){
+        //Check screen size, iphone 6,7,8 only have 667 points height.
+        //Smaller screens need different positions
+        if self.view.frame.height > 667 {
+            let height = self.view.frame.height * 0.3358
+            let y = self.view.frame.height - height
+            //Calculate frame rect for growing lightblueView
+            let rect = CGRect(x: 0, y: y, width: self.view.frame.width, height: height)
+            //Begin animation
+            UIView.animate(withDuration: 0.5, animations: {
+                self.profileNameAndLocationView.makeInvisible()
+                self.profileNameAndLocationView.transform = CGAffineTransform(translationX: 0, y: 80)
+                self.platformView?.makeInvisible()
+                self.lightblueView?.frame = rect
+            }) { completed in
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.firstSectionView.makeVisible()
+                })
+            }
+        } else {
+            let height = self.view.frame.height * 0.30
+            let y = self.view.frame.height - height
+            //Calculate frame rect for growing lightblueView
+            let rect = CGRect(x: 0, y: y, width: self.view.frame.width, height: height)
+            //Begin animation
+            UIView.animate(withDuration: 0.5, animations: {
+                self.profileNameAndLocationView.makeInvisible()
+                self.profileNameAndLocationView.transform = CGAffineTransform(translationX: 0, y: 75)
+                self.platformView?.makeInvisible()
+                self.platformView?.transform = CGAffineTransform(translationX: 0, y: 10)
+                self.lightblueView?.frame = rect
+            }) { completed in
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.firstSectionView.makeVisible()
+                })
+            }
+        }
+        
+        //Set new current active view
+        self.currentActiveSectionView = views.first
+    }
+    
+    private func animateToSecondView() {
+        //Check profile and save to profNameView
+        guard self.firstSection!.profileNameTextField.text != "" else {
+            //Warning popup
+            self.notFilledInWarning()
+            return
+        }
+        self.profNameView?.profileNameLbl.text = self.firstSection?.profileNameTextField.text
+        
+        //Check screen size, iphone 6,7,8 only have 667 points height.
+        //Smaller screens need different positions
+        if self.view.frame.height > 667 {
+            //Calculate frame rect for growing lightblueView
+            let rect = CGRect(x: 0, y: 250, width: self.view.frame.width, height: self.view.frame.height - 250)
+            //Begin animation
+            UIView.animate(withDuration: 0.5, animations: {
+                self.profileNameAndLocationView.transform = CGAffineTransform(translationX: 0, y: -80)
+                self.profileNameAndLocationView.makeVisible()
+                self.firstSectionView.makeInvisible()
+                self.lightblueView?.frame = rect
+            }) { completed in
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.platformView?.makeVisible()
+                })
+            }
+        } else {
+            //Calculate frame rect for growing lightblueView
+            let rect = CGRect(x: 0, y: 230, width: self.view.frame.width, height: self.view.frame.height - 230)
+            //Begin animation
+            UIView.animate(withDuration: 0.5, animations: {
+                self.profileNameAndLocationView.transform = CGAffineTransform(translationX: 0, y: -75)
+                self.profileNameAndLocationView.makeVisible()
+                self.firstSectionView.makeInvisible()
+                self.platformView?.transform = CGAffineTransform(translationX: 0, y: -10)
+                self.lightblueView?.frame = rect
+            }) { completed in
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.platformView?.makeVisible()
+                })
+            }
+        }
+        
+        //Set new current active view
+        self.currentActiveSectionView = views.second
+    }
+    
+    private func animateToThirdView() {
+        //Use function to check all button if there is one selected
+        let btnColl = self.getSelecteddBtns(btnArr: self.platformButtons!)
+        //If no buttons are selected, give a warning and skip
+        if btnColl.isEmpty {
+            self.platformWarning()
+            return
+        }
+        //If one or more buttons was selected, proceed with animation
+        //Variables
+        var rect : CGRect
+        var newY : Int
+        
+        //Check screen size, iphone 6,7,8 only have 667 points height.
+        //Smaller screens need different positions
+        if self.view.frame.height > 667 {
+            newY = Int(self.lightblueView!.frame.minY) + 100
+        } else {
+            newY = Int(self.lightblueView!.frame.minY) + 60
+        }
+        rect = CGRect(x: 0, y: newY, width: Int(self.view.frame.width), height: Int(self.view.frame.height) - newY)
+        
+        //Begin animation
+        UIView.animate(withDuration: 0.5, animations: {
+            self.platformView?.makeInvisible()
+            self.whiteView?.frame = rect
+        }) { completed in
+            UIView.animate(withDuration: 0.5, animations: {
+                self.genresView?.makeVisible()
+            })
+        }
+        
+        //Set new current active view
+        self.currentActiveSectionView = views.third
+    }
+    
+    private func animateToSecondViewFromThirdView(){
+        //Variables
+        var rect : CGRect
+        var height : Int
+        var y : Int
+        
+        //Check screen size, iphone 6,7,8 only have 667 points height.
+        //Smaller screens need different positions
+        if self.view.frame.height > 667 {
+            height = Int(self.view.frame.height * 0.20)
+            y = Int(self.view.frame.height) - height
+        } else {
+            height = Int(self.view.frame.height * 0.16)
+            y = Int(self.view.frame.height) - height
+        }
+        rect = CGRect(x: 0, y: y, width: Int(self.view.frame.width), height: height)
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.genresView?.makeInvisible()
+            self.whiteView?.frame = rect
+        }) { completed in
+            UIView.animate(withDuration: 0.5, animations: {
+                self.platformView?.makeVisible()
+            })
+        }
+        
+        //Set new current active view
+        self.currentActiveSectionView = views.second
+        
+    }//------------------------------- Supporting Functions --------------------
+//    //Checks all buttons
+//    //if no buttons are selected -> return false
+//    private func checkButtonsSelected(btnArr: [UIButton]) -> Bool{
+//        for button in btnArr {
+//            if button.isSelected {
+//                return true
+//            }
+//        }
+//        return false
+//    }
+    
+    private func getSelecteddBtns(btnArr: [UIButton]) -> [UIButton] {
+        var selectedBtns = [UIButton]()
+        //If button is selected, add it to the return array
+        for button in btnArr {
+            if button.isSelected {
+                selectedBtns.append(button)
+            }
+        }
+        return selectedBtns
+    }
+    
+    //------------------------ Objc functions --------------------------------
+    @objc private func blueNextBtnPressed() {
+        //Animate to second view
+        animateToSecondView()
+    }
+    
+    @objc private func whiteNextBtnPressed(){
+        animateToThirdView()
+    }
+    
+    @objc private  func finishBtnPressed(){
+        //Check interests buttons
+        let selectedBtns = self.getSelecteddBtns(btnArr: self.interestButtons!)
+        //if none are selected, give warning
+        //If more than  3 are selected, give warning
+        if selectedBtns.isEmpty {
+            self.areYouSureWarning()
+            return
+        } else if selectedBtns.count > 3 {
+            self.tooManyInterestsWarning()
+            return
+        }
+        //if one, two, or three are selected, proceed with registration
+        
+        
+        
+        //Segue to next screen
+        self.performSegue(withIdentifier: "comingSoonSegue", sender: self)
+    }
+    
+    @objc private func loginBtnPressed(){
+        //Make segue to login screen
+        self.performSegue(withIdentifier: "registerToLoginSegue", sender: self)
+    }
+    
+    @objc private func platformBtnPressed(sender: UIButton){
+        sender.toggle()
+        
+        if sender.isSelected {
+            UIView.animate(withDuration: 0.3, animations: {
+                sender.backgroundColor = darkBlueColor
+            })
+        } else {
+            UIView.animate(withDuration: 0.3, animations: {
+                sender.backgroundColor = whiteColor
+            })
+        }
+    }
+    
+    @objc private func interestBtnPressed(sender: UIButton) {
+        sender.toggle()
+        
+        if sender.isSelected {
+            UIView.animate(withDuration: 0.3, animations: {
+                sender.tintColor = darkBlueColor
+                sender.backgroundColor = darkBlueColor
+            })
+        } else {
+            UIView.animate(withDuration: 0.3, animations: {
+                sender.tintColor = lightBlueColor
+                sender.backgroundColor = lightBlueColor
+            })
+        }
+    }
+    
+    @objc private func selectProfilePictureBtnPressed() {
         let image = UIImagePickerController()
         image.delegate = self
         
@@ -78,653 +481,98 @@ class RegisterInfViewController: UIViewController, UINavigationControllerDelegat
         self.present(image, animated: true){
             
         }
-    }    
+    }
     
     //Function to pick image from the phone of the user
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         {
-            bigImageView.image = image
-            middleImageView.image = image
-            smallImageView.image = image
+            self.profNameView?.bigImageView.image = image
+            self.firstSection?.bigImageView.image = image
+            self.firstSection?.middleImageView.image = image
+            self.firstSection?.smallImageView.image = image
         }
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func nextBtnPressed(_ sender: UIButton) {
-        self.animateToSecondView()
-    }
-
-//----------------------- View elements ------------------------------
-    //Create the profile name label
-    func createProfileLbl() -> UILabel {
-        //Init label
-        let label = UILabel(frame: CGRect(x: 135, y: 258, width: 240, height: 30))
-        // font
-        label.font = UIFont.preferredFont(forTextStyle: .headline)
-        label.font = UIFont.init(name: "CocoGothic-Bold", size: 23)
-        // color
-        label.textColor = whiteColor
-        //Alignment
-        label.textAlignment = .left
-        //Text
-        label.text = "Profile Name"
-        //Invisible
-        label.makeInvisible()
-        //Add to view
-        self.view.addSubview(label)
-        
-        return label
-    }
-    
-    //Create the name and location label
-    func createNameAndLocationLabel() -> UILabel {
-        //Init label
-        let label = UILabel(frame: CGRect(x: 135, y: 296, width: 240, height: 40))
-        // font
-        label.font = UIFont.preferredFont(forTextStyle: .footnote)
-        label.font = UIFont.init(name: "CocoGothic", size: 14)
-        // color
-        label.textColor = .lightGray
-        //Alignment
-        label.textAlignment = .left
-        label.lineBreakMode = NSLineBreakMode.byWordWrapping
-        label.numberOfLines = 0
-        //Text
-        label.text = "name, location"
-        //Invisible
-        label.makeInvisible()
-        //Add to view
-        self.view.addSubview(label)
-        
-        return label
-    }
-//-------------------------------------------------------------
-//-------------------------- Animations -----------------------
-    func moveProfileNameAndLocationLabelsToTop() {
-        //Set value from profile text field as text for label
-        var profName = self.profileNameTxtField.text
-        if profName == "" {
-            profName = "Profile Name"
-        }
-        self.profileNameLbl?.text = profName
-        
-        //Set name and location as text for label
-        // --> get name and location from previous screens  TODO!!!!
-        
-        //Set center position
-        profileNameLbl!.center = CGPoint(x: 255, y: 165)
-        nameAndLocationLbl?.center = CGPoint(x: 255, y: 200)
-        
-        //Make visible
-        profileNameLbl?.makeVisible()
-        nameAndLocationLbl?.makeVisible()
-    }
-    
-    func moveProfileNameAndLocationLabelBack() {
-        //Set center position
-        profileNameLbl!.center = CGPoint(x: 255, y: 258)
-        nameAndLocationLbl?.center = CGPoint(x: 255, y: 296)
-        //Make invisible
-        profileNameLbl?.makeInvisible()
-        nameAndLocationLbl?.makeInvisible()
-    }
-    
-    //Move bigImageView back and forth (1 = first position, 2 = second position)
-    func moveBigImageView(position : Int) {
-        let size = self.bigImageView.frame.size
-        switch position {
-        case 1:
-            let newY = 258 + size.height / 2
-            let newX = 40 + size.width / 2
-            
-            self.bigImageView.center = CGPoint(x: newX, y: newY)
-        case 2:
-            let newY = 150 + size.height / 2
-            let newX = 40 + size.width / 2
-            
-            self.bigImageView.center = CGPoint(x: newX, y: newY)
-        default:
-            print("Not a correct value!")
-        }
-    }
-    
-    //Use this function in as an animation to  make these invisible in the view
-    func hideDarkBlueViewElements() {
-        //Label
-        self.infoLbl.makeInvisible()
-        
-        //Images
-        self.middleImageView.makeInvisible()
-        self.smallImageView.makeInvisible()
-        
-        //Button
-        self.selectProfileBtn.makeInvisible()
-        self.nextBtn.makeInvisible()
-        
-        //Stack Views
-        self.profileStackView.makeInvisible()
-        self.locationStackView.makeInvisible()
-    }
-    
-    func showDarkBlueViewElements() {
-        //Label
-        self.infoLbl.makeVisible()
-        
-        //Images
-        self.middleImageView.makeVisible()
-        self.smallImageView.makeVisible()
-        
-        //Button
-        self.selectProfileBtn.makeVisible()
-        self.nextBtn.makeVisible()
-        
-        //Stack Views
-        self.profileStackView.makeVisible()
-        self.locationStackView.makeVisible()
-    }
-    
-    //Grow the lightBlueView
-    func growLightBlueView() {
-        //positions & dimensions
-        let yPos = self.view.frame.height / 3
-        let width = self.view.frame.width
-        let height = self.view.frame.height - yPos
-        //Create rect to use as frame
-        let rect = CGRect(x: 0, y: yPos, width: width, height: height)
-        //Set view frame
-        self.lightBlueView.frame = rect
-    }
-    
-    //Shrink the lightBlueview
-    func shrinkLightBlueView() {
-        //positions & dimensions
-        let yPos = self.view.frame.height - 250
-        let width = self.view.frame.width
-        let height = self.view.frame.height - yPos
-        //Create rect to use as frame
-        let rect = CGRect(x: 0, y: yPos, width: width, height: height)
-        //Set view frame
-        self.lightBlueView.frame = rect
-    }
-    
-    //Hide UI Elements
-    func hideLightBlueViewElements() {
-        platformsLbl?.makeInvisible()
-        platformButtonsView?.makeInvisible()
-        whiteNextBtn?.makeInvisible()
-    }
-    
-    //Show UI elements
-    func showLightBlueViewElements() {
-        self.platformsLbl?.makeVisible()
-        self.whiteNextBtn?.makeVisible()
-        self.platformButtonsView?.makeVisible()
-    }
-    
-    //Grow view
-    func growWhiteView() {
-        //positions & dimensions
-        let yPos = (self.view.frame.height / 3) + 90
-        let width = self.view.frame.width
-        let height = self.view.frame.height - yPos
-        
-        //Create rect to use as frame
-        let rect = CGRect(x: 0, y: yPos, width: width, height: height)
-        
-        //Set view frame
-        self.whiteView.frame = rect
-    }
-    
-    //Shrink view
-    func shrinkWhiteView() {
-        //Position and dimensions
-        let yPos = self.view.frame.height - 150
-        let width = self.view.frame.width
-        let height = self.view.frame.height - yPos
-        //Rect
-        let rect = CGRect(x: 0, y: yPos, width: width, height: height)
-        //Set as frame
-        self.whiteView.frame = rect
-    }
-    
-    //Show UI Elements
-    func showWhiteViewElements() {
-        genresLbl?.makeVisible()
-        genresInfoLbl?.makeVisible()
-        genresButtonsView?.makeVisible()
-        finishBtn?.makeVisible()
-    }
-    
-    //Hide UI Elements
-    func hideWhiteViewElements() {
-        genresLbl?.makeInvisible()
-        genresInfoLbl?.makeInvisible()
-        genresButtonsView?.makeInvisible()
-        finishBtn?.makeInvisible()
-    }
-//--------------------------------------------------
-//---------------- Create Views --------------------
-    func createPlatformButtonsView() {
-        //Dimensions & positions
-        let xPos = 40
-        let yPos = Int(self.platformsLbl!.frame.maxY) + 20
-        let width = Int(self.lightBlueView.frame.width) - 80
-        let height = 120
-        
-        //Create rect
-        let rect = CGRect(x: xPos, y: yPos, width: width, height: height)
-        //Init view
-        let view = UIView(frame: rect)
-        //Color
-        view.backgroundColor = self.lightBlueView.backgroundColor
-        view.isOpaque = true
-        //Invisible
-        view.makeInvisible()
-        //Add to superview (lightBlueView)
-        self.lightBlueView.addSubview(view)
-        //Save newly created view to buttonsView
-        self.platformButtonsView = view
-    }
-    
-    func createGenresButtonsView() {
-        //Dimensions & positions
-        let xPos = 40
-        let yPos = Int(self.genresInfoLbl!.frame.maxY) + 20
-        let width = Int(self.whiteView.frame.width) - 80
-        let height = 160
-
-        //Create rect
-        let rect = CGRect(x: xPos, y: yPos, width: width, height: height)
-        //Init view
-        let view = UIView(frame: rect)
-        //Color
-        view.backgroundColor = self.whiteView.backgroundColor
-        view.isOpaque = true
-        //Invisible
-        view.makeInvisible()
-        //Add to superview (lightBlueView)
-        self.whiteView.addSubview(view)
-        //Save newly created view to buttonsView
-        self.genresButtonsView = view
-    }
-//---------------------------------------------------------
-//-------- Create elements for lightBlueView---------------
-    func createElementsForLightBlueView() {
-        let viewFrame = self.lightBlueView.frame
-        //Label
-        //Init label
-        let label = UILabel(frame: CGRect(x: 40, y: 60, width: viewFrame.width - 40, height: 50))
-        // font
-        label.font = UIFont.preferredFont(forTextStyle: .footnote)
-        label.font = UIFont.init(name: "CocoGothic-Bold", size: 23)
-        // color
-        label.textColor = whiteColor
-        //Alignment
-        label.textAlignment = .left
-        label.lineBreakMode = NSLineBreakMode.byWordWrapping
-        label.numberOfLines = 0
-        //Make invisible
-        label.makeInvisible()
-        
-        //Text
-        label.text = "Platforms that show your work"
-        
-        //Save label onto platformsLbl
-        self.platformsLbl = label
-        //-------------------------------------------
-        
-        //Create the view where all the buttons will be placed
-        self.createPlatformButtonsView()
-        //Create all the buttons (invisible because view is still invisible)
-        self.makePlatformButtons()
-        
-        //-------------------Button------------------
-        let button = UIButton(type: .system)
-        //Make rect for frame
-        let rect = CGRect(x: viewFrame.width - 120, y: platformButtonsView!.frame.maxY + 50, width: 80, height: 30)
-        //Set button frame
-        button.frame = rect
-        //Color
-        button.backgroundColor = whiteColor
-        button.setTitleColor(lightBlueColor, for: .normal)
-        //Font
-        button.titleLabel?.font = UIFont(name: "CocoGothic-Bold", size: 14)
-        //Text
-        button.setTitle("Next", for: .normal)
-        //Rounded corners
-        button.layer.cornerRadius = 15
-        //Make invisible
-        button.makeInvisible()
-        //Make clickable
-        button.addTarget(self, action: #selector(whiteNextBtnPressed), for: .touchUpInside)
-        //Save button onto whiteNextBtn
-        self.whiteNextBtn = button
-        //---------------------------------
-        
-        //Add views to lightBlueView
-        self.lightBlueView.addSubview(label)
-        self.lightBlueView.addSubview(button)
-    }
-    
-    //Objective C function, action for button press (nextBtn)
-    @objc func whiteNextBtnPressed(sender : UIButton) {
-        self.animateToThirdView()
-    }
-    
-    //Creates the buttons which represent all the social media platforms
-    func makePlatformButtons() {
-        //Frame
-        let viewFrame = self.platformButtonsView!.frame
-        //Dimensions for each button
-        let width = 50
-        let height = 50
-        let spaceBetweenButtons = 20
-        //Check how many can be shown in 1 row
-        let amountPerRowFloat = viewFrame.width / CGFloat(integerLiteral: width + spaceBetweenButtons)
-        //Round amountPerRowFloat
-        let roundedAmountPerRowFloat = amountPerRowFloat.rounded()
-        //Convert to integer (easier to work with)
-        let amountPerRow = Int(roundedAmountPerRowFloat)
-        for (platform, index) in PLATFORMS {
-            //Init button as system button for click animations
-            let button = UIButton(type: .system)
-            
-            if amountPerRow > index {
-                //Positions
-                let xPos = index * (width + spaceBetweenButtons)
-                let yPos = 0
-                //Init rect
-                let rect = CGRect(x: xPos, y: yPos, width: width, height: height)
-                //Set rect as frame for button
-                button.frame = rect
-            } else {
-                let calculatedValue = index - amountPerRow
-                //Positions
-                let xPos = calculatedValue * (width + spaceBetweenButtons)
-                let yPos = height + spaceBetweenButtons
-                //Init rect
-                let rect = CGRect(x: xPos, y: yPos, width: width, height: height)
-                //Set rect as frame for button
-                button.frame = rect
-            }
-            
-            //Color
-            button.backgroundColor = whiteColor
-            button.tintColor = lightBlueColor
-            //CornerRadius
-            button.layer.cornerRadius = 10
-            button.clipsToBounds  = true
-            
-            //button insets
-            button.imageEdgeInsets = UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3);
-            //Get image from platformname
-            let image = UIImage(named: platform)
-            //Set image as background image for button
-            button.setImage(image, for: .normal)
-            button.setImage(image, for: .selected)
-            //Set action
-            button.addTarget(self, action: #selector(platformBtnTapped), for: UIControl.Event.touchUpInside)
-            //Append to array
-            platformButtons.append(button)
-            //Add to view
-            self.platformButtonsView!.addSubview(button)
-        }
-    }
-    
-    @objc func platformBtnTapped(sender: UIButton) {
-        sender.toggle()
-        if sender.isSelected {
-            
-            sender.tintColor = darkBlueColor
-        } else {
-            sender.tintColor = lightBlueColor
-        }
-    }
-//---------------------------------------------------------
-//----------------- Create elements for white view --------
-    func createElementsForWhiteView() {
-        let viewFrame = self.whiteView.frame
-        //---------------- Label ---------------------------
-        //Rect for label
-        let rect = CGRect(x: 40, y: 60, width: viewFrame.width - 40, height: 25)
-        //Init label
-        let label = UILabel(frame: rect)
-        // font
-        label.font = UIFont.preferredFont(forTextStyle: .headline)
-        label.font = UIFont.init(name: "CocoGothic-Bold", size: 23)
-        // color
-        label.textColor = nearlyBlackColor
-        //Alignment
-        label.textAlignment = .left
-        label.lineBreakMode = NSLineBreakMode.byWordWrapping
-        label.numberOfLines = 0
-        //Text
-        label.text = "Genres of interest"
-        //Invisible
-        label.makeInvisible()
-        //Save label
-        self.genresLbl = label
-        //--------------------------------------------------
-        //---------------- Second Label --------------------
-        //Rect for second label
-        let secondRect = CGRect(x: 40, y: label.frame.maxY + 5, width: viewFrame.width - 40, height: 20)
-        //Init second label
-        let secondLabel = UILabel(frame: secondRect)
-        // font
-        secondLabel.font = UIFont.preferredFont(forTextStyle: .headline)
-        secondLabel.font = UIFont.init(name: "CocoGothic", size: 17)
-        // color
-        secondLabel.textColor = lightGrayColor
-        //Alignment
-        secondLabel.textAlignment = .left
-        secondLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-        secondLabel.numberOfLines = 0
-        //Text
-        secondLabel.text = "Max. 3 genres"
-        //Invisible
-        secondLabel.makeInvisible()
-        //Save label
-        self.genresInfoLbl = secondLabel
-        //--------------------------------------------------
-        //---------------- Genre buttons -------------------
-        self.createGenresButtonsView()
-        self.fillGenresButtonView()
-        //--------------------------------------------------
-        //---------------- Button --------------------------
-        //Button
-        let button = UIButton(type: .system)
-        //Calc yPos
-        let whiteViewHeight = self.view.frame.height - ((self.view.frame.height / 3) + 90)
-        //Make rect for frame
-        let btnRect = CGRect(x: viewFrame.width - 120, y: whiteViewHeight - 150, width: 80, height: 30)
-        //Set button frame
-        button.frame = btnRect
-        //Color
-        button.backgroundColor = lightBlueColor
-        button.setTitleColor(whiteColor, for: .normal)
-        //Font
-        button.titleLabel?.font = UIFont(name: "CocoGothic-Bold", size: 14)
-        //Text
-        button.setTitle("Finish", for: .normal)
-        //Rounded corners
-        button.layer.cornerRadius = 15
-        //Make invisible
-        button.makeInvisible()
-        //Make clickable
-        button.addTarget(self, action: #selector(finishBtnPressed), for: .touchUpInside)
-        //Save button
-        self.finishBtn = button
-        //--------------------------------------------------
-        
-        
-        //Add labels to super view
-        self.whiteView.addSubview(label)
-        self.whiteView.addSubview(secondLabel)
-        self.whiteView.addSubview(button)
-    }
-    
-    //FINAL BUTTON, save everything to firebase
-    @objc func finishBtnPressed() {
-        //TODO
-    }
-    
-    func fillGenresButtonView() {
-        //Frame
-        let viewFrame = self.genresButtonsView!.frame
-        //Dimensions for each button
-        let width = 60
-        let height = 30
-        let spaceBetweenButtons = 10
-        //Check how many can be shown in 1 row
-        let amountPerRowFloat = viewFrame.width / CGFloat(integerLiteral: width + spaceBetweenButtons)
-        //Round amountPerRowFloat
-        let roundedAmountPerRowFloat = amountPerRowFloat.rounded()
-        //Convert to integer (easier to work with)
-        let amountPerRow = Int(roundedAmountPerRowFloat)
-        for (genre, index) in GENRES {
-            //Init button as system button for click animations
-            let button = UIButton(type: .system)
-            
-            if amountPerRow > index {
-                //Positions
-                let xPos = index * (width + spaceBetweenButtons)
-                let yPos = 0
-                //Init rect
-                let rect = CGRect(x: xPos, y: yPos, width: width, height: height)
-                //Set rect as frame for button
-                button.frame = rect
-            } else {
-                let calculatedValue = index - amountPerRow
-                //Positions
-                let xPos = calculatedValue * (width + spaceBetweenButtons)
-                let yPos = height + spaceBetweenButtons
-                //Init rect
-                let rect = CGRect(x: xPos, y: yPos, width: width, height: height)
-                //Set rect as frame for button
-                button.frame = rect
-            }
-            
-            //Color
-            button.backgroundColor = lightBlueColor
-            button.setTitleColor(whiteColor, for: .normal)
-            button.setTitleColor(greenColor, for: .selected)
-            button.tintColor = .clear
-            //CornerRadius
-            button.layer.cornerRadius = CGFloat(integerLiteral: height / 2)
-            //Font
-            button.titleLabel?.font = UIFont(name: "CocoGothic-Bold", size: 14)
-            //Title
-            button.setTitle(genre, for: .normal)
-            //Set action
-            button.addTarget(self, action: #selector(genreBtnTapped), for: UIControl.Event.touchUpInside)
-            //Append to array
-            genresButtons.append(button)
-            //Add to view
-            self.genresButtonsView!.addSubview(button)
-        }
-    }
-    
-    @objc func genreBtnTapped(sender: UIButton) {
-        sender.toggle()
-    }
-//---------------------------------------------------------
-    
-    func addSwipeGestureRecognizers(){
+    //----------------------------------- Gesture recognizers ---------------------------------
+    private func addSwipeGestureRecognizers(){
         let up = UISwipeGestureRecognizer(target: self, action: #selector(lightBlueUpSwipe))
         up.direction = .up
-        self.lightBlueView.addGestureRecognizer(up)
+        self.lightblueView!.addGestureRecognizer(up)
         
         let down = UISwipeGestureRecognizer(target: self, action: #selector(lightBlueDownSwipe))
         down.direction = .down
-        self.lightBlueView.addGestureRecognizer(down)
+        self.lightblueView!.addGestureRecognizer(down)
         
         let whiteUp = UISwipeGestureRecognizer(target: self, action: #selector(whiteUpSwipe))
         whiteUp.direction = .up
-        self.whiteView.addGestureRecognizer(whiteUp)
+        self.whiteView!.addGestureRecognizer(whiteUp)
         
         let whiteDown = UISwipeGestureRecognizer(target: self, action: #selector(whiteDownSwipe))
         whiteDown.direction = .down
-        self.whiteView.addGestureRecognizer(whiteDown)
+        self.whiteView!.addGestureRecognizer(whiteDown)
     }
     
     @objc func lightBlueUpSwipe() {
-        if currentActiveView == "darkBlueView" {
+        //Animation
+        if self.currentActiveSectionView == self.views.first {
             self.animateToSecondView()
         }
     }
     
     @objc func lightBlueDownSwipe() {
-        if currentActiveView == "lightBlueView" {
+        if self.currentActiveSectionView == self.views.second {
             self.animateToFirstView()
         }
     }
     
     @objc func whiteUpSwipe() {
-        if currentActiveView == "lightBlueView" {
+        if self.currentActiveSectionView == self.views.second {
             self.animateToThirdView()
         }
     }
     
     @objc func whiteDownSwipe() {
-        if currentActiveView == "whiteView" {
+        if self.currentActiveSectionView == self.views.third {
             self.animateToSecondViewFromThirdView()
         }
     }
     
-    //Do all the animations to get back to the first view
-    func animateToFirstView() {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.hideLightBlueViewElements()
-            self.shrinkLightBlueView()
-            self.moveBigImageView(position: 1)
-            self.moveProfileNameAndLocationLabelBack()
-        }) { completed in
-            UIView.animate(withDuration: 0.5, animations: {
-                self.showDarkBlueViewElements()
-            })
-        }
-        self.currentActiveView = "darkBlueView"
+    //------------------------- Pop up warnings -------------------------------------
+    //Warning alert when profile name isn't filled in
+    func notFilledInWarning() {
+        let alertController = UIAlertController(title: "Oops!", message:
+            "It seems you didn't pick a profile name", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+        
+        self.present(alertController, animated: true, completion: nil)
     }
-    //Do all the animations to get to the second view
-    func animateToSecondView() {
-        UIView.animate(withDuration: 0.5, animations: {
-            //Move big image view to the second position
-            self.moveBigImageView(position: 2)
-            self.moveProfileNameAndLocationLabelsToTop()
-            self.hideDarkBlueViewElements()
-            self.growLightBlueView()
-        }) { completed in
-            UIView.animate(withDuration: 0.5, animations: {
-                self.showLightBlueViewElements()
-            })
-        }
-        self.currentActiveView = "lightBlueView"
+    
+    func areYouSureWarning(){
+        let alertController = UIAlertController(title: "Hold up!", message:
+            "Don't you have interests?", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "I don't have interests", style: .default))
+        alertController.addAction(UIAlertAction(title: "Add interests", style: .default))
+        
+        self.present(alertController, animated: true, completion: nil)
     }
-    //Do all the animations to get back to the second view
-    func animateToSecondViewFromThirdView() {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.hideWhiteViewElements()
-            self.shrinkWhiteView()
-            self.growLightBlueView()
-        }) { completed in
-            UIView.animate(withDuration: 0.5, animations: {
-                self.showLightBlueViewElements()
-            })
-        }
-        self.currentActiveView = "lightBlueView"
+    
+    func platformWarning() {
+        let alertController = UIAlertController(title: "Oh no!", message:
+            "Please tell us on which platforms brands can find you", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+        
+        self.present(alertController, animated: true, completion: nil)
     }
-    //Do all the animations to get to the third view
-    func animateToThirdView() {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.hideLightBlueViewElements()
-            self.growWhiteView()
-        }) { completed in
-            UIView.animate(withDuration: 0.5, animations: {
-                self.showWhiteViewElements()
-            })
-        }
-        self.currentActiveView = "whiteView"
+    
+    func tooManyInterestsWarning() {
+        let alertController = UIAlertController(title: "Hold your horses!", message:
+            "Please select no more than 3 interests", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+        
+        self.present(alertController, animated: true, completion: nil)
     }
+    
 }

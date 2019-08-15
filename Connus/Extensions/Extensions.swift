@@ -29,6 +29,13 @@ extension UIViewController {
     @objc private func hideKeyboard() {
         view.endEditing(true)
     }
+    
+    func makeNavigationControllerTranslucent() {
+        //Make navigationbar translucent
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.view.backgroundColor = .clear
+    }
 }
 
 extension UIColor {

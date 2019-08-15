@@ -14,8 +14,8 @@ class ChoiceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //Back button tint
-        self.navigationController?.navigationBar.tintColor = whiteColor
+        //Hide back button
+        self.navigationItem.hidesBackButton = true
         //set rounded top corners for whiteView
         self.whiteView.roundTopCorners()
     }
